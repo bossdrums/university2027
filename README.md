@@ -1,6 +1,6 @@
 # 🎓 Primary Education QTS Finder
 
-A mobile-first, single-file web app to help prospective students explore **BA (Hons) Primary Education with QTS** courses at UK universities for the **September 2027 intake**.
+A mobile-first, single-file web app to help prospective students explore **Primary Education with QTS** courses at UK universities for the **September 2027 intake**.
 
 No frameworks. No build tools. No API keys. Just open the HTML file in any browser.
 
@@ -8,20 +8,65 @@ No frameworks. No build tools. No API keys. Just open the HTML file in any brows
 
 ## Features
 
-- **Top 10 universities** ranked by the Complete University Guide UK overall ranking, loaded on the homepage
-- **Search** across 16 courses by university name, city, or course type (BA, PGCE, BEd, etc.)
-- **Detailed course modal** for each result, covering:
+- **29 courses across 26 universities** covering BA (Hons), PGCE, and Early Years routes
+- **Filter by route type** — BA (Hons), PGCE, or Early Years
+- **Filter by region** — London, North West, North East, Yorkshire, Midlands, South East, South West
+- **Search** by university name, city, course type, or region — results update instantly
+- **Detailed course modal** for every result, covering:
   - Open days
   - Duration and expected graduation year
   - Location with a clickable Google Maps link
   - Entry requirements and UCAS points
   - Annual tuition fee
   - Link to the course page
-  - UK university ranking (linked to source)
-  - UK course/subject ranking (linked to source)
+  - UK university ranking (linked to Complete University Guide)
+  - UK course / subject ranking (linked to source)
   - First-year accommodation options with links
 - **Dark / light mode** toggle
-- **Works offline** — all data is baked into the file
+- **Works offline** — all data is baked into the file, no internet required (except for clicking external links)
+
+---
+
+## Universities Included
+
+### BA (Hons) with QTS
+
+| University | Location | Region | UCAS Points |
+|---|---|---|---|
+| University of Exeter | Exeter | South West | 128–136 |
+| University of Bristol | Bristol | South West | 128 |
+| Durham University | Durham | North East | 128 |
+| University of Leeds | Leeds | Yorkshire | 120–128 |
+| University of Birmingham | Birmingham | Midlands | 120 |
+| University of Manchester | Manchester | North West | 120 |
+| University of Nottingham | Nottingham | Midlands | 112–120 |
+| Newcastle University | Newcastle | North East | 112 |
+| Manchester Metropolitan University | Manchester | North West | 120 |
+| University of Reading | Reading | South East | 112 |
+| University of Winchester | Winchester | South East | 104–112 |
+| Bath Spa University | Bath | South West | 104–112 |
+| Leeds Trinity University | Leeds | Yorkshire | 96–104 |
+| University of Worcester | Worcester | Midlands | 96–112 |
+| Liverpool Hope University | Liverpool | North West | 104–112 |
+| Liverpool John Moores University | Liverpool | North West | 104–120 |
+| Edge Hill University | Ormskirk | North West | 96–120 |
+| University of Sunderland | Sunderland | North East | 104–120 |
+| York St John University | York | Yorkshire | 96–112 |
+| University of Cumbria | Carlisle | North West | 96–112 |
+| Birmingham City University | Birmingham | Midlands | 80–112 |
+| Canterbury Christ Church University | Canterbury | South East | 88–96 |
+| University of Roehampton | London | London | 88–112 |
+| University of East London | London | London | 80–96 |
+| Middlesex University | London | London | 80–96 |
+| University of Wolverhampton | Wolverhampton | Midlands | 96–112 |
+
+### PGCE with QTS
+
+| University | Location | Region |
+|---|---|---|
+| Durham University | Durham | North East |
+| University of Leeds | Leeds | Yorkshire |
+| University of Manchester | Manchester | North West |
 
 ---
 
@@ -58,27 +103,29 @@ Because it is a single self-contained file, you can share it in several ways:
 
 ---
 
-## Courses Included
-
-| Route | Universities |
-|---|---|
-| BA (Hons) with QTS | Exeter, Bristol, Durham, Leeds, Birmingham, Manchester, Nottingham, Newcastle, Reading, Winchester, Leeds Trinity, Edge Hill, Canterbury Christ Church |
-| PGCE with QTS | Manchester, Leeds, Durham |
-
----
-
 ## Data & Disclaimer
 
-All course data is based on publicly available information current as of **2025**. Open day dates, entry requirements, tuition fees, and accommodation details can change.
+All course data is based on publicly available information current as of **2025**. Open day dates, entry requirements, tuition fees, and accommodation details can change. Bath Spa University's course is newly launched (first taught September 2025) and has no ranking data yet.
 
 > Always verify details directly with the university before making any application decisions.
+
+Fees shown reflect the current UK undergraduate fee cap. Some universities (Bath Spa, Worcester, University of East London) charge £9,790 per year following the recent fee cap increase. All others are £9,535 per year.
 
 ---
 
 ## Built With
 
-- Vanilla HTML, CSS, and JavaScript
+- Vanilla HTML, CSS, and JavaScript — no frameworks, no dependencies
 - [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) and [DM Sans](https://fonts.google.com/specimen/DM+Sans) via Google Fonts
+
+---
+
+## Roadmap / Possible Improvements
+
+- Add Welsh and Scottish university routes
+- Add School Direct and SCITT routes
+- Add bursary and scholarship information per course
+- Add a shortlist / favourites feature
 
 ---
 
