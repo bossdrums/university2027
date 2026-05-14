@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primary Education QTS Finder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;background:var(--bg);color:var(--tx);min-height:100vh;transition:background .3s,color .3s}
+body.light{--bg:#f0f4f8;--card:#fff;--tx:#0f172a;--tx2:#475569;--muted:#94a3b8;--ac:#1e6fbf;--acl:#dbeafe;--acd:#1345a0;--bd:#e2e8f0;--bd2:#cbd5e1;--hbg:#0f172a;--htx:#f8fafc;--tag:#dbeafe;--tagt:#1345a0;--hov:#f1f5f9;--sh:0 4px 20px rgba(15,23,42,.10);--sh2:0 2px 8px rgba(15,23,42,.07);--gold:#b8860b;--goldbg:#fef9e7;--sec:#f8fafc;--ov:rgba(15,23,42,.6)}
+body.dark{--bg:#0f172a;--card:#1e293b;--tx:#f1f5f9;--tx2:#94a3b8;--muted:#64748b;--ac:#60a5fa;--acl:#1e3a5f;--acd:#93c5fd;--bd:#334155;--bd2:#475569;--hbg:#020617;--htx:#f1f5f9;--tag:#1e3a5f;--tagt:#93c5fd;--hov:#273447;--sh:0 4px 20px rgba(0,0,0,.3);--sh2:0 2px 8px rgba(0,0,0,.2);--gold:#fbbf24;--goldbg:#2d1f05;--sec:#152032;--ov:rgba(2,6,23,.75)}
+.hdr{background:var(--hbg);color:var(--htx);padding:1rem 1.25rem .9rem;position:sticky;top:0;z-index:50;box-shadow:0 2px 10px rgba(0,0,0,.2)}
+.hdr-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
+.logo{display:flex;align-items:center;gap:.55rem}
+.logo-ic{width:32px;height:32px;background:var(--ac);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:17px}
+.logo-tx{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;line-height:1.2}
+.logo-sub{font-size:.65rem;font-weight:300;color:#94a3b8;letter-spacing:.05em;text-transform:uppercase}
+.tbtn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:var(--htx);border-radius:7px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.05rem;flex-shrink:0;transition:background .2s}
+.tbtn:hover{background:rgba(255,255,255,.18)}
+.sw{position:relative}
+.si-ic{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:#64748b;font-size:.9rem;pointer-events:none}
+#si{width:100%;padding:.65rem 2.5rem .65rem 2.2rem;border:1.5px solid rgba(255,255,255,.12);border-radius:10px;background:rgba(255,255,255,.07);color:var(--htx);font-family:'DM Sans',sans-serif;font-size:.9rem;outline:none;transition:border-color .2s}
+#si::placeholder{color:#64748b}
+#si:focus{border-color:var(--ac)}
+.cb{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:#64748b;cursor:pointer;font-size:.9rem;display:none;padding:2px}
+.cb.v{display:block}
+.main{padding:1.25rem;max-width:620px;margin:0 auto}
+.sh{display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem}
+.st{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--tx)}
+.sb{background:var(--ac);color:#fff;font-size:.68rem;font-weight:600;padding:2px 9px;border-radius:20px}
+.intake{font-size:.76rem;color:var(--muted);text-align:center;margin-bottom:1.1rem}
+.ri{font-size:.78rem;color:var(--muted);margin-bottom:.75rem}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:13px;padding:.9rem 1rem;margin-bottom:.75rem;cursor:pointer;transition:box-shadow .2s,border-color .2s,transform .15s;box-shadow:var(--sh2);position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--ac);border-radius:13px 0 0 13px;opacity:0;transition:opacity .2s}
+.card:hover,.card:focus{box-shadow:var(--sh);border-color:var(--ac);transform:translateY(-1px);outline:none}
+.card:hover::before,.card:focus::before{opacity:1}
+.ch{display:flex;align-items:flex-start;gap:.65rem;margin-bottom:.45rem}
+.rb{min-width:36px;height:36px;background:var(--goldbg);border:1.5px solid var(--gold);border-radius:7px;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}
+.rn{font-family:'Playfair Display',serif;font-size:.92rem;font-weight:700;color:var(--gold);line-height:1}
+.rl{font-size:.55rem;color:var(--gold);text-transform:uppercase;letter-spacing:.05em}
+.ci{flex:1;min-width:0}
+.un{font-family:'Playfair Display',serif;font-size:.93rem;font-weight:600;color:var(--tx);line-height:1.3;margin-bottom:.12rem}
+.cn{font-size:.76rem;color:var(--tx2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cv{color:var(--muted);font-size:1.15rem;align-self:center;flex-shrink:0;transition:transform .15s}
+.card:hover .cv,.card:focus .cv{transform:translateX(3px);color:var(--ac)}
+.cf{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.5rem}
+.tag{background:var(--tag);color:var(--tagt);font-size:.68rem;font-weight:500;padding:2px 8px;border-radius:20px;white-space:nowrap}
+.tg{background:#dcfce7;color:#166534}
+body.dark .tg{background:#14532d;color:#86efac}
+.to{background:#fff7ed;color:#9a3412}
+body.dark .to{background:#431407;color:#fdba74}
+.empty{text-align:center;padding:2.5rem 1rem;color:var(--muted)}
+.ei{font-size:2.2rem;margin-bottom:.6rem}
+.empty p{font-size:.85rem}
+.ov{display:none;position:fixed;inset:0;background:var(--ov);z-index:200;align-items:flex-end;justify-content:center;backdrop-filter:blur(4px)}
+.ov.open{display:flex}
+.modal{background:var(--card);border-radius:20px 20px 0 0;width:100%;max-width:620px;max-height:90vh;overflow-y:auto;animation:su .3s cubic-bezier(.32,.72,0,1);box-shadow:0 -8px 40px rgba(0,0,0,.25)}
+@keyframes su{from{transform:translateY(100%);opacity:0}to{transform:translateY(0);opacity:1}}
+.drag{text-align:center;padding:.7rem 0 0}
+.drag-b{display:inline-block;width:38px;height:4px;background:var(--bd2);border-radius:2px}
+.mh{padding:.9rem 1rem .7rem;border-bottom:1px solid var(--bd);display:flex;align-items:flex-start;gap:.65rem}
+.mr{min-width:38px;height:38px;background:var(--goldbg);border:1.5px solid var(--gold);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}
+.mrn{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--gold);line-height:1}
+.mrl{font-size:.55rem;color:var(--gold);text-transform:uppercase;letter-spacing:.05em}
+.mt{flex:1}
+.mu{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--tx);line-height:1.3;margin-bottom:.14rem}
+.mc{font-size:.78rem;color:var(--tx2);line-height:1.4}
+.mx{background:var(--hov);border:none;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.88rem;color:var(--tx2);flex-shrink:0;transition:background .15s}
+.mx:hover{background:var(--bd)}
+.mb{padding:.9rem 1rem 2.5rem}
+.ds{margin-bottom:.85rem;background:var(--sec);border:1px solid var(--bd);border-radius:11px;overflow:hidden}
+.dst{font-size:.67rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);padding:.55rem .9rem 0}
+.dr{display:flex;align-items:flex-start;gap:.55rem;padding:.45rem .9rem;border-bottom:1px solid var(--bd);font-size:.82rem}
+.dr:last-child{border-bottom:none}
+.di{font-size:.9rem;color:var(--ac);flex-shrink:0;margin-top:2px}
+.dl{min-width:105px;color:var(--muted);font-size:.75rem;padding-top:1px;flex-shrink:0}
+.dv{color:var(--tx);flex:1;line-height:1.55}
+.lk{color:var(--ac);text-decoration:none;word-break:break-word}
+.lk:hover{text-decoration:underline}
+.odl{list-style:none}
+.odl li{display:flex;align-items:center;gap:.35rem;font-size:.79rem;padding:1px 0}
+.odl li::before{content:'•';color:var(--ac);font-size:.9rem}
+.disc{background:var(--acl);border:1px solid var(--ac);border-radius:9px;padding:.65rem .9rem;font-size:.74rem;color:var(--acd);line-height:1.55;margin-top:.5rem}
+body.dark .disc{color:var(--ac)}
+.footer{text-align:center;padding:1.5rem 1rem 2rem;font-size:.72rem;color:var(--muted)}
+</style>
+</head>
+<body class="light">
+
+<header class="hdr">
+  <div class="hdr-top">
+    <div class="logo">
+      <div class="logo-ic">🎓</div>
+      <div>
+        <div class="logo-tx">Primary Ed Finder</div>
+        <div class="logo-sub">QTS Course Guide &middot; UK 2027</div>
+      </div>
+    </div>
+    <button class="tbtn" id="tbtn" aria-label="Toggle dark/light mode">🌙</button>
+  </div>
+  <div class="sw">
+    <span class="si-ic">🔍</span>
+    <input type="search" id="si" placeholder="Search university, city or course type…" autocomplete="off" />
+    <button class="cb" id="cb" aria-label="Clear search">✕</button>
+  </div>
+</header>
+
+<main class="main">
+  <div id="home">
+    <div class="sh">
+      <span class="st">Top Universities 2027</span>
+      <span class="sb">Sept 2027</span>
+    </div>
+    <div class="intake">📋 Ranked by Complete University Guide &middot; UK overall ranking</div>
+    <div id="cw"></div>
+  </div>
+  <div id="sp" style="display:none">
+    <div class="sh"><span class="st" id="stitle">Results</span></div>
+    <div class="ri" id="rinfo"></div>
+    <div id="sc"></div>
+  </div>
+</main>
+
+<div class="footer">Data correct as of 2025 &middot; Always verify with universities before applying</div>
+
+<div class="ov" id="ov" role="dialog" aria-modal="true">
+  <div class="modal" id="modal">
+    <div class="drag"><span class="drag-b"></span></div>
+    <div class="mh">
+      <div class="mr"><span class="mrn" id="mrn">#</span><span class="mrl">UK rank</span></div>
+      <div class="mt">
+        <div class="mu" id="mu">University</div>
+        <div class="mc" id="mc_el">Course</div>
+      </div>
+      <button class="mx" id="mx" aria-label="Close">✕</button>
+    </div>
+    <div class="mb" id="mb"></div>
+  </div>
+</div>
+
+<script>
+const UNIS = [
+  {rank:1,name:"University of Exeter",course:"BA (Hons) Education with QTS (Primary)",location:"Exeter",ucasPoints:"136",duration:"3 years",fee:"£9,535/yr",routeTypes:["BA (Hons)","QTS"],detail:{openDays:["Saturday 21 June 2025","Saturday 20 September 2025","Saturday 1 November 2025"],duration:"3 years, graduating 2030",locationFull:"Exeter, Devon",mapsQuery:"University of Exeter",entryRequirements:"ABB at A-Level including English or Maths. GCSE English, Maths and Science at grade C/4 or above required.",ucasPoints:"128–136 UCAS points",courseFee:"£9,535 per year",courseUrl:"https://www.exeter.ac.uk/undergraduate/degrees/education/ba-education-qts/",uniRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings",courseRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings?s=education",courseRankPosition:"Top 10 for Education",accommodation:"First-year students are guaranteed accommodation in university halls. Options include catered and self-catered residences from approx £130–£190 per week.",accommodationUrl:"https://www.exeter.ac.uk/students/accommodation/"}},
+  {rank:5,name:"University of Bristol",course:"BA (Hons) Primary Education with QTS",location:"Bristol",ucasPoints:"128",duration:"3 years",fee:"£9,535/yr",routeTypes:["BA (Hons)","QTS"],detail:{openDays:["Saturday 7 June 2025","Saturday 13 September 2025","Saturday 25 October 2025"],duration:"3 years, graduating 2030",locationFull:"Bristol, South West England",mapsQuery:"University of Bristol",entryRequirements:"ABB at A-Level. GCSE English Language, Maths and a Science at grade B/5 or above. DBS check required.",ucasPoints:"128 UCAS points",courseFee:"£9,535 per year",courseUrl:"https://www.bristol.ac.uk/study/undergraduate/",uniRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings",courseRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings?s=education",courseRankPosition:"Top 15 for Education",accommodation:"First-year students are guaranteed a place in halls. Self-catered and catered options from approx £140–£200 per week.",accommodationUrl:"https://www.bristol.ac.uk/accommodation/"}},
+  {rank:8,name:"Durham University",course:"BA (Hons) Primary Education with QTS",location:"Durham",ucasPoints:"128",duration:"3 years",fee:"£9,535/yr",routeTypes:["BA (Hons)","QTS"],detail:{openDays:["Saturday 28 June 2025","Saturday 20 September 2025"],duration:"3 years, graduating 2030",locationFull:"Durham, County Durham",mapsQuery:"Durham University",entryRequirements:"ABB at A-Level. GCSE English, Maths and Science at grade C/4 minimum. Strong personal statement essential.",ucasPoints:"128 UCAS points",courseFee:"£9,535 per year",courseUrl:"https://www.durham.ac.uk/study/undergraduate/courses/primary-education-ba-hons/",uniRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings",courseRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings?s=education",courseRankPosition:"Top 10 for Education",accommodation:"All first-year undergraduates are guaranteed accommodation in one of Durham's 17 colleges, from approx £150–£210 per week.",accommodationUrl:"https://www.durham.ac.uk/colleges-and-student-experience/colleges/"}},
+  {rank:14,name:"University of Leeds",course:"BA (Hons) Primary Education with QTS",location:"Leeds",ucasPoints:"120",duration:"3 years",fee:"£9,535/yr",routeTypes:["BA (Hons)","QTS"],detail:{openDays:["Saturday 14 June 2025","Saturday 27 September 2025","Saturday 8 November 2025"],duration:"3 years, graduating 2030",locationFull:"Leeds, West Yorkshire",mapsQuery:"University of Leeds",entryRequirements:"BBB at A-Level. GCSE English Language, Maths and Science at grade C/4. Experience working with primary-age children required.",ucasPoints:"120–128 UCAS points",courseFee:"£9,535 per year",courseUrl:"https://courses.leeds.ac.uk/g135/primary-education-with-qts",uniRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings",courseRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings?s=education",courseRankPosition:"Top 20 for Education",accommodation:"First-year students are guaranteed university accommodation. Village-style campus with self-catered flats from approx £120–£175 per week.",accommodationUrl:"https://accommodation.leeds.ac.uk/"}},
+  {rank:18,name:"University of Birmingham",course:"BA (Hons) Primary Education with QTS",location:"Birmingham",ucasPoints:"120",duration:"3 years",fee:"£9,535/yr",routeTypes:["BA (Hons)","QTS"],detail:{openDays:["Saturday 21 June 2025","Saturday 4 October 2025"],duration:"3 years, graduating 2030",locationFull:"Birmingham, West Midlands",mapsQuery:"University of Birmingham",entryRequirements:"BBB at A-Level including a humanity or social science. GCSE English, Maths and Science at grade C/4.",ucasPoints:"120 UCAS points",courseFee:"£9,535 per year",courseUrl:"https://www.birmingham.ac.uk/undergraduate/courses/education/primary-education-qts.aspx",uniRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings",courseRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings?s=education",courseRankPosition:"Top 20 for Education",accommodation:"First-year students guaranteed a place in halls on or near campus. Self-catered from approx £115–£170 per week.",accommodationUrl:"https://www.birmingham.ac.uk/undergraduate/accommodation/index.aspx"}},
+  {rank:22,name:"University of Manchester",course:"BA (Hons) Primary Education with QTS",location:"Manchester",ucasPoints:"120",duration:"3 years",fee:"£9,535/yr",routeTypes:["BA (Hons)","QTS"],detail:{openDays:["Saturday 14 June 2025","Saturday 11 October 2025","Saturday 15 November 2025"],duration:"3 years, graduating 2030",locationFull:"Manchester, Greater Manchester",mapsQuery:"University of Manchester",entryRequirements:"BBB at A-Level. GCSE English Language grade B/5, Maths and Science grade C/4. References from experience with children required.",ucasPoints:"120 UCAS points",courseFee:"£9,535 per year",courseUrl:"https://www.manchester.ac.uk/study/undergraduate/courses/",uniRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings",courseRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings?s=education",courseRankPosition:"Top 20 for Education",accommodation:"First-year students are guaranteed accommodation. Large range of halls across the city from approx £120–£185 per week.",accommodationUrl:"https://www.accommodation.manchester.ac.uk/"}},
+  {rank:27,name:"University of Nottingham",course:"BA (Hons) Primary and Early Years Education with QTS",location:"Nottingham",ucasPoints:"112",duration:"3 years",fee:"£9,535/yr",routeTypes:["BA (Hons)","QTS","Early Years"],detail:{openDays:["Saturday 21 June 2025","Saturday 4 October 2025"],duration:"3 years, graduating 2030",locationFull:"Nottingham, East Midlands",mapsQuery:"University of Nottingham",entryRequirements:"BBC at A-Level. GCSE English, Maths and a Science at grade C/4. Experience in a primary school strongly recommended.",ucasPoints:"112–120 UCAS points",courseFee:"£9,535 per year",courseUrl:"https://www.nottingham.ac.uk/ugstudy/courses/education/ba-hons-primary-and-early-years-education-with-qts.aspx",uniRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings",courseRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings?s=education",courseRankPosition:"Top 25 for Education",accommodation:"Guaranteed accommodation for all first-year students on the parkland campus, from approx £120–£180 per week.",accommodationUrl:"https://www.nottingham.ac.uk/accommodation/"}},
+  {rank:32,name:"Newcastle University",course:"BA (Hons) Primary Education with QTS",location:"Newcastle",ucasPoints:"112",duration:"3 years",fee:"£9,535/yr",routeTypes:["BA (Hons)","QTS"],detail:{openDays:["Saturday 28 June 2025","Saturday 27 September 2025"],duration:"3 years, graduating 2030",locationFull:"Newcastle upon Tyne, Tyne and Wear",mapsQuery:"Newcastle University",entryRequirements:"BBC at A-Level. GCSE English Language, Maths and Science at grade C/4. Must demonstrate commitment to working with children.",ucasPoints:"112 UCAS points",courseFee:"£9,535 per year",courseUrl:"https://www.ncl.ac.uk/undergraduate/degrees/x100/",uniRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings",courseRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings?s=education",courseRankPosition:"Top 30 for Education",accommodation:"First-year students guaranteed accommodation. City-centre and campus options from approx £115–£175 per week.",accommodationUrl:"https://www.ncl.ac.uk/accommodation/"}},
+  {rank:38,name:"University of Reading",course:"BA (Hons) Primary Education with QTS",location:"Reading",ucasPoints:"112",duration:"3 years",fee:"£9,535/yr",routeTypes:["BA (Hons)","QTS"],detail:{openDays:["Saturday 21 June 2025","Saturday 18 October 2025"],duration:"3 years, graduating 2030",locationFull:"Reading, Berkshire",mapsQuery:"University of Reading",entryRequirements:"BBC at A-Level. GCSE English Language grade B/5, Maths grade C/4 and Science grade C/4. School experience is highly valued.",ucasPoints:"112 UCAS points",courseFee:"£9,535 per year",courseUrl:"https://www.reading.ac.uk/education/ug-courses/ba-primary-education-qts",uniRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings",courseRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings?s=education",courseRankPosition:"Top 15 for Education",accommodation:"Guaranteed for first-year students. Campus-based self-catered halls from approx £120–£170 per week.",accommodationUrl:"https://www.reading.ac.uk/accommodation/"}},
+  {rank:45,name:"University of Winchester",course:"BA (Hons) Primary Education with QTS",location:"Winchester",ucasPoints:"104",duration:"3 years",fee:"£9,535/yr",routeTypes:["BA (Hons)","QTS"],detail:{openDays:["Saturday 14 June 2025","Saturday 11 October 2025","Saturday 8 November 2025"],duration:"3 years, graduating 2030",locationFull:"Winchester, Hampshire",mapsQuery:"University of Winchester",entryRequirements:"BCC at A-Level. GCSE English, Maths and Science at grade C/4. Enthusiastic personal statement and relevant experience with children essential.",ucasPoints:"104–112 UCAS points",courseFee:"£9,535 per year",courseUrl:"https://www.winchester.ac.uk/courses/undergraduate/primary-education-with-qts/",uniRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings",courseRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings?s=education",courseRankPosition:"Top 20 for Education",accommodation:"First-year students are guaranteed a place in on-campus halls. Self-catered from approx £110–£160 per week.",accommodationUrl:"https://www.winchester.ac.uk/student-life/accommodation/"}}
+];
+
+const ALL = [
+  ...UNIS,
+  {rank:52,name:"Leeds Trinity University",course:"BA (Hons) Primary Education (5-11) with QTS",location:"Leeds",ucasPoints:"96",duration:"3 years",fee:"£9,535/yr",routeTypes:["BA (Hons)","QTS"],detail:{openDays:["Saturday 28 June 2025","Saturday 18 October 2025"],duration:"3 years, graduating 2030",locationFull:"Horsforth, Leeds",mapsQuery:"Leeds Trinity University",entryRequirements:"CCC at A-Level. GCSE English, Maths and Science at grade C/4 required.",ucasPoints:"96–104 UCAS points",courseFee:"£9,535 per year",courseUrl:"https://www.leedstrinity.ac.uk/course/ba-hons-primary-education-qts/",uniRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings",courseRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings?s=education",courseRankPosition:"Not ranked separately",accommodation:"First-year guaranteed halls on compact campus from approx £100–£145 per week.",accommodationUrl:"https://www.leedstrinity.ac.uk/student-life/accommodation/"}},
+  {rank:60,name:"Edge Hill University",course:"BA (Hons) Primary Education with QTS",location:"Ormskirk",ucasPoints:"96",duration:"3 years",fee:"£9,535/yr",routeTypes:["BA (Hons)","QTS"],detail:{openDays:["Saturday 21 June 2025","Saturday 4 October 2025"],duration:"3 years, graduating 2030",locationFull:"Ormskirk, Lancashire",mapsQuery:"Edge Hill University Ormskirk",entryRequirements:"CCC at A-Level. GCSE English and Maths grade C/4. Science at grade C/4 also required.",ucasPoints:"96 UCAS points",courseFee:"£9,535 per year",courseUrl:"https://www.edgehill.ac.uk/course/primary-education-with-qts-ba-hons/",uniRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings",courseRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings?s=education",courseRankPosition:"Not ranked separately",accommodation:"Guaranteed for first-year students on the award-winning campus from approx £100–£145 per week.",accommodationUrl:"https://www.edgehill.ac.uk/student-life/accommodation/"}},
+  {rank:75,name:"Canterbury Christ Church University",course:"BA (Hons) Primary Education with QTS",location:"Canterbury",ucasPoints:"88",duration:"3 years",fee:"£9,535/yr",routeTypes:["BA (Hons)","QTS"],detail:{openDays:["Saturday 14 June 2025","Saturday 11 October 2025"],duration:"3 years, graduating 2030",locationFull:"Canterbury, Kent",mapsQuery:"Canterbury Christ Church University",entryRequirements:"Grade C in two A-Levels. GCSE English Language, Maths and Science at C/4. Strong experience with children required.",ucasPoints:"88–96 UCAS points",courseFee:"£9,535 per year",courseUrl:"https://www.canterbury.ac.uk/courses/undergraduate/primary-education-with-qts",uniRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings",courseRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings?s=education",courseRankPosition:"Top 30 for Education",accommodation:"Halls available for first-year students in the historic city centre from approx £100–£150 per week.",accommodationUrl:"https://www.canterbury.ac.uk/student-life/accommodation"}},
+  {rank:22,name:"University of Manchester",course:"PGCE Primary Education with QTS",location:"Manchester",ucasPoints:"N/A – degree required",duration:"1 year",fee:"£9,535/yr",routeTypes:["PGCE","QTS","Postgraduate"],detail:{openDays:["Wednesday 15 January 2025 (online)","Wednesday 12 March 2025 (online)"],duration:"1 year, qualifying summer 2028",locationFull:"Manchester, Greater Manchester",mapsQuery:"University of Manchester School of Education",entryRequirements:"2:1 degree or above in any subject. GCSE English Language grade B/5, Maths and Science grade C/4. Minimum 10 days school experience.",ucasPoints:"Degree-level entry – 2:1 minimum",courseFee:"£9,535 per year (bursaries available)",courseUrl:"https://www.manchester.ac.uk/study/masters/courses/list/01687/pgce-primary-education/",uniRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings",courseRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings?s=education",courseRankPosition:"Top 20 for Education",accommodation:"Postgraduate halls and private accommodation available. University support for finding housing.",accommodationUrl:"https://www.accommodation.manchester.ac.uk/"}},
+  {rank:14,name:"University of Leeds",course:"PGCE Primary Education with QTS",location:"Leeds",ucasPoints:"N/A – degree required",duration:"1 year",fee:"£9,535/yr",routeTypes:["PGCE","QTS","Postgraduate"],detail:{openDays:["Thursday 23 January 2025 (online)"],duration:"1 year, qualifying summer 2028",locationFull:"Leeds, West Yorkshire",mapsQuery:"University of Leeds School of Education",entryRequirements:"2:1 honours degree. GCSE English Language and Maths at B/5 and Science at C/4. Previous school experience essential.",ucasPoints:"Degree-level entry – 2:1 minimum",courseFee:"£9,535 per year (bursaries may apply)",courseUrl:"https://courses.leeds.ac.uk/j152/primary-education-pgce",uniRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings",courseRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings?s=education",courseRankPosition:"Top 20 for Education",accommodation:"Postgraduate accommodation options available on campus.",accommodationUrl:"https://accommodation.leeds.ac.uk/"}},
+  {rank:8,name:"Durham University",course:"PGCE Primary Education with QTS",location:"Durham",ucasPoints:"N/A – degree required",duration:"1 year",fee:"£9,535/yr",routeTypes:["PGCE","QTS","Postgraduate"],detail:{openDays:["Wednesday 29 January 2025 (online)"],duration:"1 year, qualifying summer 2028",locationFull:"Durham, County Durham",mapsQuery:"Durham University School of Education",entryRequirements:"2:1 degree. GCSE English Language grade B/5, Maths and Science grade C/4. Relevant school placement experience required.",ucasPoints:"Degree-level entry – 2:1 minimum",courseFee:"£9,535 per year",courseUrl:"https://www.durham.ac.uk/study/postgraduate/taught/courses/education-pgce-primary/",uniRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings",courseRankSource:"https://www.thecompleteuniversityguide.co.uk/league-tables/rankings?s=education",courseRankPosition:"Top 10 for Education",accommodation:"Postgraduate college accommodation available in Durham's historic city.",accommodationUrl:"https://www.durham.ac.uk/colleges-and-student-experience/colleges/"}}
+];
+
+const tbtn = document.getElementById("tbtn");
+const si = document.getElementById("si");
+const cb = document.getElementById("cb");
+const home = document.getElementById("home");
+const cw = document.getElementById("cw");
+const sp = document.getElementById("sp");
+const sc = document.getElementById("sc");
+const stitle = document.getElementById("stitle");
+const rinfo = document.getElementById("rinfo");
+const ov = document.getElementById("ov");
+const mx = document.getElementById("mx");
+const mb = document.getElementById("mb");
+const mu = document.getElementById("mu");
+const mc_el = document.getElementById("mc_el");
+const mrn = document.getElementById("mrn");
+
+let theme = "light", timer, currentList = [];
+
+tbtn.addEventListener("click", () => {
+  theme = theme === "light" ? "dark" : "light";
+  document.body.className = theme;
+  tbtn.textContent = theme === "dark" ? "☀️" : "🌙";
+});
+
+si.addEventListener("input", () => {
+  const v = si.value.trim();
+  cb.classList.toggle("v", v.length > 0);
+  clearTimeout(timer);
+  if (!v) { home.style.display = "block"; sp.style.display = "none"; return; }
+  if (v.length < 2) return;
+  timer = setTimeout(() => doSearch(v), 300);
+});
+
+cb.addEventListener("click", () => {
+  si.value = ""; cb.classList.remove("v");
+  home.style.display = "block"; sp.style.display = "none";
+});
+
+mx.addEventListener("click", () => ov.classList.remove("open"));
+ov.addEventListener("click", e => { if (e.target === ov) ov.classList.remove("open"); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") ov.classList.remove("open"); });
+
+function card(u, idx) {
+  return `<div class="card" onclick="openM(${idx})" tabindex="0" role="button" aria-label="View details for ${u.name}" onkeydown="if(event.key==='Enter')openM(${idx})">
+    <div class="ch">
+      <div class="rb"><span class="rn">#${u.rank}</span><span class="rl">UK</span></div>
+      <div class="ci"><div class="un">${u.name}</div><div class="cn">${u.course}</div></div>
+      <span class="cv">&#8250;</span>
+    </div>
+    <div class="cf">
+      <span class="tag">📍 ${u.location}</span>
+      <span class="tag tg">⏱ ${u.duration}</span>
+      <span class="tag to">💷 ${u.fee}</span>
+      ${(u.routeTypes||[]).map(r => `<span class="tag">${r}</span>`).join("")}
+    </div>
+  </div>`;
+}
+
+function openM(idx) {
+  const u = currentList[idx];
+  const d = u.detail;
+  mu.textContent = u.name;
+  mc_el.textContent = u.course;
+  mrn.textContent = "#" + u.rank;
+  const mapsUrl = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(d.mapsQuery || u.name);
+  mb.innerHTML = `
+    <div class="ds">
+      <div class="dst">Course Details</div>
+      <div class="dr"><span class="di">📅</span><span class="dl">Open days</span><span class="dv">${d.openDays && d.openDays.length ? '<ul class="odl">' + d.openDays.map(x => '<li>' + x + '</li>').join("") + '</ul>' : "Check university website for upcoming dates"}</span></div>
+      <div class="dr"><span class="di">🗓</span><span class="dl">Duration</span><span class="dv">${d.duration}</span></div>
+      <div class="dr"><span class="di">📍</span><span class="dl">Location</span><span class="dv"><a class="lk" href="${mapsUrl}" target="_blank" rel="noopener">${d.locationFull} 🗺</a></span></div>
+    </div>
+    <div class="ds">
+      <div class="dst">Entry &amp; Fees</div>
+      <div class="dr"><span class="di">🎯</span><span class="dl">UCAS points</span><span class="dv">${d.ucasPoints}</span></div>
+      <div class="dr"><span class="di">📝</span><span class="dl">Entry requirements</span><span class="dv">${d.entryRequirements}</span></div>
+      <div class="dr"><span class="di">💷</span><span class="dl">Annual fee</span><span class="dv">${d.courseFee}</span></div>
+      <div class="dr"><span class="di">🔗</span><span class="dl">Course page</span><span class="dv"><a class="lk" href="${d.courseUrl}" target="_blank" rel="noopener">View course details →</a></span></div>
+    </div>
+    <div class="ds">
+      <div class="dst">Rankings</div>
+      <div class="dr"><span class="di">🏛</span><span class="dl">University rank</span><span class="dv"><a class="lk" href="${d.uniRankSource}" target="_blank" rel="noopener">#${u.rank} in UK →</a></span></div>
+      <div class="dr"><span class="di">🎓</span><span class="dl">Course rank</span><span class="dv"><a class="lk" href="${d.courseRankSource}" target="_blank" rel="noopener">${d.courseRankPosition}</a></span></div>
+    </div>
+    <div class="ds">
+      <div class="dst">Accommodation</div>
+      <div class="dr"><span class="di">🏠</span><span class="dl">Halls / options</span><span class="dv">${d.accommodation}</span></div>
+      <div class="dr"><span class="di">🔗</span><span class="dl">Accommodation</span><span class="dv"><a class="lk" href="${d.accommodationUrl}" target="_blank" rel="noopener">View accommodation options →</a></span></div>
+    </div>
+    <div class="disc">ℹ️ Details are based on current course information and may change. Always verify open day dates, entry requirements, and fees directly with the university before applying.</div>`;
+  ov.classList.add("open");
+  modal.scrollTop = 0;
+}
+
+function doSearch(q) {
+  home.style.display = "none"; sp.style.display = "block";
+  stitle.textContent = 'Results for "' + q + '"';
+  const ql = q.toLowerCase();
+  const res = ALL.filter(u =>
+    u.name.toLowerCase().includes(ql) ||
+    u.course.toLowerCase().includes(ql) ||
+    u.location.toLowerCase().includes(ql) ||
+    (u.routeTypes||[]).some(r => r.toLowerCase().includes(ql))
+  );
+  rinfo.textContent = res.length + " course" + (res.length !== 1 ? "s" : "") + " found";
+  currentList = res;
+  sc.innerHTML = res.length
+    ? res.map((u, i) => card(u, i)).join("")
+    : '<div class="empty"><div class="ei">🔍</div><p>No courses found for "' + q + '". Try "PGCE", "Leeds" or "Manchester".</p></div>';
+}
+
+currentList = UNIS;
+cw.innerHTML = UNIS.map((u, i) => card(u, i)).join("");
+</script>
+</body>
+</html>
