@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Primary Education QTS Finder — UK 2027</title>
+<title>Matilda's Uni App — Primary Education QTS 2027</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0d0d1a;--card:#13132a;--card2:#1a1a35;--tx:#f0f0ff;--tx2:#a0a0c8;--muted:#5a5a88;--pur:#a855f7;--purL:#c084fc;--purD:#7c3aed;--cor:#ff6b6b;--lime:#a3e635;--cyan:#22d3ee;--gold:#fbbf24;--goldbg:rgba(251,191,36,.12);--bd:rgba(168,85,247,.18);--bd2:rgba(168,85,247,.35);--sh:0 8px 32px rgba(168,85,247,.18);--sh2:0 2px 12px rgba(0,0,0,.4);--ov:rgba(2,2,18,.88);--chip:rgba(168,85,247,.12);--chipt:#c084fc;--chipa:#a855f7;--chipat:#fff;--grad:linear-gradient(135deg,#7c3aed,#a855f7 40%,#ff6b6b);--grad2:linear-gradient(135deg,#a855f7,#22d3ee)}
+
+:root{--bg:#0d0d1a;--card:#13132a;--card2:#1a1a35;--tx:#f0f0ff;--tx2:#a0a0c8;--muted:#5a5a88;--pur:#a855f7;--purL:#c084fc;--purD:#7c3aed;--cor:#ff6b6b;--lime:#a3e635;--cyan:#22d3ee;--gold:#fbbf24;--goldbg:rgba(251,191,36,.12);--bd:rgba(168,85,247,.18);--bd2:rgba(168,85,247,.35);--sh:0 8px 32px rgba(168,85,247,.18);--sh2:0 2px 12px rgba(0,0,0,.4);--ov:rgba(2,2,18,.88);--chip:rgba(168,85,247,.12);--chipt:#c084fc;--chipa:#a855f7;--chipat:#fff;--grad:linear-gradient(135deg,#7c3aed,#a855f7 40%,#ff6b6b);--grad2:linear-gradient(135deg,#a855f7,#22d3ee);--green:#22c55e;--greenbg:rgba(34,197,94,.12);--red:#ef4444;--redbg:rgba(239,68,68,.12);--amber:#f59e0b;--amberbg:rgba(245,158,11,.12)}
 body.light{--bg:#f5f0ff;--card:#fff;--card2:#f0ebff;--tx:#1a0533;--tx2:#4a2d6b;--muted:#9a82b8;--bd:rgba(168,85,247,.2);--bd2:rgba(168,85,247,.4);--sh:0 8px 32px rgba(168,85,247,.15);--sh2:0 2px 12px rgba(100,60,180,.1);--ov:rgba(20,0,60,.75);--chip:rgba(168,85,247,.1);--chipt:#7c3aed;--chipa:#7c3aed;--chipat:#fff}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;line-height:1.6;background:var(--bg);color:var(--tx);min-height:100vh;transition:background .4s,color .4s;overflow-x:hidden}
@@ -20,9 +21,9 @@ body.light .hdr{background:rgba(245,240,255,.92)}
 .logo-ic{width:34px;height:34px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:0 4px 14px rgba(168,85,247,.5);flex-shrink:0}
 .logo-tx{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1}
 .logo-sub{font-size:.62rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
-.hdr-btns{display:flex;gap:.5rem;align-items:center}
-.tbtn{background:var(--chip);border:1px solid var(--bd);color:var(--tx);border-radius:8px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;transition:all .2s;flex-shrink:0}
-.tbtn:hover{background:var(--bd2);transform:scale(1.05)}
+.hdr-btns{display:flex;gap:.4rem;align-items:center}
+.tbtn{background:var(--chip);border:1px solid var(--bd);color:var(--tx);border-radius:8px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.88rem;transition:all .2s;flex-shrink:0}
+.tbtn:hover{background:var(--bd2);transform:scale(1.06)}
 .sw{position:relative;margin-bottom:.6rem}
 .si-ic{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:.9rem;pointer-events:none}
 #si{width:100%;padding:.65rem 2.5rem .65rem 2.2rem;border:1.5px solid var(--bd);border-radius:12px;background:rgba(168,85,247,.07);color:var(--tx);font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;outline:none;transition:border-color .2s,background .2s}
@@ -43,17 +44,42 @@ body.light .hdr{background:rgba(245,240,255,.92)}
 .stat{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:.5rem .85rem;text-align:center;flex:1;min-width:80px;max-width:115px}
 .stat-n{font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:800;background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
 .stat-l{font-size:.62rem;color:var(--muted);font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-top:2px}
+.calc-wrap{max-width:620px;margin:0 auto .5rem;padding:0 1.1rem;position:relative;z-index:1}
+.calc-box{background:var(--card);border:1.5px solid var(--bd2);border-radius:16px;padding:1rem 1.1rem;box-shadow:var(--sh2)}
+.calc-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:.4rem;cursor:pointer;user-select:none}
+.calc-title{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:800;display:flex;align-items:center;gap:.5rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.calc-toggle{font-size:.72rem;color:var(--muted);font-weight:600;background:var(--chip);border:1px solid var(--bd);border-radius:8px;padding:3px 10px;transition:all .2s;flex-shrink:0}
+.calc-toggle:hover{color:var(--purL);border-color:var(--pur)}
+.calc-body{display:none;margin-top:.7rem}
+.calc-body.open{display:block}
+.calc-intro{font-size:.78rem;color:var(--tx2);margin-bottom:.85rem;line-height:1.6}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-bottom:.8rem}
+.calc-row{display:flex;flex-direction:column;gap:.25rem}
+.calc-label{font-size:.7rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.calc-sel{background:var(--card2);border:1.5px solid var(--bd);border-radius:10px;color:var(--tx);font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;padding:.45rem .6rem;outline:none;cursor:pointer;transition:border-color .2s;width:100%}
+.calc-sel:focus{border-color:var(--pur)}
+.calc-result{background:var(--card2);border:1px solid var(--bd);border-radius:12px;padding:.7rem .9rem;font-size:.8rem;line-height:1.6;min-height:48px;transition:border-color .3s}
+.calc-result.has-result{border-color:var(--pur)}
+.pts-total{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.calc-note{font-size:.68rem;color:var(--muted);margin-top:.4rem;line-height:1.5;font-style:italic}
+.deadline-bar{background:linear-gradient(135deg,rgba(251,191,36,.1),rgba(245,158,11,.06));border:1px solid rgba(251,191,36,.28);border-radius:12px;padding:.6rem 1rem;margin:.5rem auto .1rem;max-width:598px;padding-left:1.1rem;padding-right:1.1rem;display:flex;align-items:center;gap:.7rem;font-size:.78rem;position:relative;z-index:1}
+.dl-ic{font-size:1.1rem;flex-shrink:0}
+.dl-tx{flex:1;line-height:1.5}
+.dl-days{font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;color:var(--gold)}
 .main{padding:.75rem 1.1rem 1.5rem;max-width:620px;margin:0 auto;position:relative;z-index:1}
 .sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
 .sh-left{display:flex;align-items:center;gap:.5rem}
 .st{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--tx)}
 .sb{background:var(--grad);color:#fff;font-size:.65rem;font-weight:700;padding:3px 10px;border-radius:20px;box-shadow:0 3px 10px rgba(168,85,247,.4);letter-spacing:.03em}
 .count{font-size:.75rem;color:var(--muted);font-weight:600}
-.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:1rem 1.05rem;margin-bottom:.75rem;cursor:pointer;transition:box-shadow .25s,border-color .25s,transform .2s,background .2s;box-shadow:var(--sh2);position:relative;overflow:hidden;animation:fadeUp .5s ease both}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:1rem 1.05rem;margin-bottom:.75rem;cursor:pointer;transition:box-shadow .25s,border-color .25s,transform .2s,background .2s,opacity .3s;box-shadow:var(--sh2);position:relative;overflow:hidden;animation:fadeUp .5s ease both}
 .card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(168,85,247,.06),transparent 60%);opacity:0;transition:opacity .25s;border-radius:16px;pointer-events:none}
 .card:hover,.card:focus{box-shadow:var(--sh);border-color:var(--pur);transform:translateY(-3px) scale(1.01);outline:none;background:var(--card2)}
 .card:hover::after,.card:focus::after{opacity:1}
-.c-accent{position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:16px 0 0 16px;background:var(--grad)}
+.card.dim{opacity:.3;filter:grayscale(.5)}
+.card.eligible{border-color:var(--green)!important}
+.card.eligible .c-accent{background:linear-gradient(180deg,var(--green),#16a34a)!important}
+.c-accent{position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:16px 0 0 16px;background:var(--grad);transition:background .3s}
 .ch{display:flex;align-items:flex-start;gap:.7rem;margin-bottom:.5rem;padding-left:.3rem}
 .rb{min-width:38px;height:38px;border-radius:10px;background:var(--goldbg);border:1.5px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(251,191,36,.2)}
 .rn{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:800;color:var(--gold);line-height:1}
@@ -70,12 +96,20 @@ body.light .hdr{background:rgba(245,240,255,.92)}
 .t-fee{background:rgba(251,191,36,.12);color:var(--gold);border:1px solid rgba(251,191,36,.25)}
 .t-ba{background:rgba(168,85,247,.12);color:var(--purL);border:1px solid rgba(168,85,247,.25)}
 .t-ntu{background:rgba(255,107,107,.1);color:#ff9f9f;border:1px solid rgba(255,107,107,.25)}
-.slbtn{background:none;border:1px solid var(--bd);border-radius:8px;color:var(--muted);cursor:pointer;font-size:.9rem;padding:4px 7px;transition:all .2s;align-self:flex-start;flex-shrink:0;margin-top:-2px}
+.t-elig{background:var(--greenbg);color:var(--green);border:1px solid rgba(34,197,94,.3);font-weight:700}
+.t-close{background:var(--amberbg);color:var(--amber);border:1px solid rgba(245,158,11,.3);font-weight:700}
+.t-ofsted{background:rgba(168,85,247,.15);color:var(--purL);border:1px solid rgba(168,85,247,.3)}
+.card-actions{display:flex;gap:.35rem;align-self:flex-start;flex-shrink:0;margin-top:-2px}
+.slbtn,.cmpbtn{background:none;border:1px solid var(--bd);border-radius:8px;color:var(--muted);cursor:pointer;font-size:.85rem;padding:4px 7px;transition:all .2s}
 .slbtn:hover{border-color:var(--cor);color:var(--cor)}
 .slbtn.saved{color:var(--cor);border-color:var(--cor);background:rgba(255,107,107,.1)}
-.sl-bar{position:fixed;bottom:1.2rem;left:50%;transform:translateX(-50%) translateY(100px);background:var(--grad);color:#fff;border-radius:25px;padding:.6rem 1.2rem;font-size:.82rem;font-weight:700;box-shadow:0 8px 28px rgba(168,85,247,.5);display:flex;align-items:center;gap:.6rem;transition:transform .35s cubic-bezier(.34,1.56,.64,1);z-index:150;cursor:pointer;border:none;font-family:'Plus Jakarta Sans',sans-serif;white-space:nowrap}
+.cmpbtn:hover{border-color:var(--cyan);color:var(--cyan)}
+.cmpbtn.in-cmp{color:var(--cyan);border-color:var(--cyan);background:rgba(34,211,238,.1)}
+.sl-bar{position:fixed;bottom:1.2rem;left:50%;transform:translateX(-50%) translateY(110px);background:var(--grad);color:#fff;border-radius:25px;padding:.6rem 1.2rem;font-size:.82rem;font-weight:700;box-shadow:0 8px 28px rgba(168,85,247,.5);display:flex;align-items:center;gap:.6rem;transition:transform .35s cubic-bezier(.34,1.56,.64,1);z-index:150;cursor:pointer;border:none;font-family:'Plus Jakarta Sans',sans-serif;white-space:nowrap}
 .sl-bar.show{transform:translateX(-50%) translateY(0)}
 .sl-bar-x{background:rgba(255,255,255,.2);border:none;color:#fff;border-radius:50%;width:22px;height:22px;font-size:.75rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.cmp-bar{position:fixed;bottom:1.2rem;right:1rem;transform:translateY(110px);background:linear-gradient(135deg,#0e7490,#22d3ee);color:#fff;border-radius:20px;padding:.55rem 1rem;font-size:.78rem;font-weight:700;box-shadow:0 8px 28px rgba(34,211,238,.35);display:flex;align-items:center;gap:.5rem;transition:transform .35s cubic-bezier(.34,1.56,.64,1);z-index:149;cursor:pointer;border:none;font-family:'Plus Jakarta Sans',sans-serif;white-space:nowrap}
+.cmp-bar.show{transform:translateY(0)}
 .empty{text-align:center;padding:3rem 1rem;color:var(--muted)}
 .empty-ic{font-size:2.8rem;margin-bottom:.7rem;display:block}
 .empty p{font-size:.88rem;line-height:1.7}
@@ -94,10 +128,12 @@ body.light .hdr{background:rgba(245,240,255,.92)}
 .mu{font-family:'Syne',sans-serif;font-size:1.02rem;font-weight:800;color:var(--tx);line-height:1.3;margin-bottom:.14rem}
 .mc{font-size:.78rem;color:var(--tx2);line-height:1.4;font-weight:500}
 .mbtns{display:flex;gap:.4rem;align-items:flex-start;flex-shrink:0}
-.mx,.msl{background:var(--chip);border:1px solid var(--bd);border-radius:8px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.85rem;color:var(--tx2);transition:all .2s}
+.mx,.msl,.mcmp{background:var(--chip);border:1px solid var(--bd);border-radius:8px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.82rem;color:var(--tx2);transition:all .2s}
 .mx:hover{background:var(--bd2);color:var(--tx)}
 .msl:hover{border-color:var(--cor);color:var(--cor)}
 .msl.saved{color:var(--cor);border-color:var(--cor);background:rgba(255,107,107,.1)}
+.mcmp:hover{border-color:var(--cyan);color:var(--cyan)}
+.mcmp.in-cmp{color:var(--cyan);border-color:var(--cyan);background:rgba(34,211,238,.1)}
 .mb{padding:.9rem 1.1rem 2.5rem}
 .gy-badge{display:flex;align-items:center;justify-content:center;gap:.5rem;background:var(--grad);border-radius:12px;padding:.7rem 1rem;margin-bottom:1rem;color:#fff;font-weight:700;font-size:.88rem;box-shadow:0 6px 20px rgba(168,85,247,.35)}
 .ds{margin-bottom:.85rem;background:var(--card2);border:1px solid var(--bd);border-radius:13px;overflow:hidden}
@@ -111,11 +147,23 @@ body.light .hdr{background:rgba(245,240,255,.92)}
 body.light .lk{color:var(--purD)}
 .lk:hover{text-decoration:underline;color:var(--purL)}
 .disc{background:rgba(168,85,247,.08);border:1px solid var(--bd);border-radius:10px;padding:.7rem .95rem;font-size:.74rem;color:var(--tx2);line-height:1.6;margin-top:.5rem}
+.notes-area{width:100%;background:var(--card2);border:1.5px solid var(--bd);border-radius:10px;color:var(--tx);font-family:'Plus Jakarta Sans',sans-serif;font-size:.8rem;padding:.6rem .8rem;resize:vertical;min-height:76px;outline:none;transition:border-color .2s;line-height:1.55}
+.notes-area:focus{border-color:var(--pur)}
+.notes-area::placeholder{color:var(--muted)}
+.notes-saved{font-size:.68rem;color:var(--green);font-weight:600;margin-top:.3rem;display:none}
+.ps-box{background:linear-gradient(135deg,rgba(168,85,247,.09),rgba(34,211,238,.06));border:1px solid var(--bd2);border-radius:13px;padding:.75rem .95rem;margin-bottom:.85rem}
+.ps-title{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--purL);margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem}
+.ps-tips{list-style:none;display:flex;flex-direction:column;gap:.35rem}
+.ps-tip{font-size:.78rem;color:var(--tx2);line-height:1.55;padding-left:1.1rem;position:relative}
+.ps-tip::before{content:'✦';position:absolute;left:0;color:var(--pur);font-size:.58rem;top:.25rem}
 .sl-ov{display:none;position:fixed;inset:0;background:var(--ov);z-index:300;align-items:flex-end;justify-content:center;backdrop-filter:blur(8px)}
 .sl-ov.open{display:flex}
-.sl-modal{background:var(--card);border-radius:24px 24px 0 0;width:100%;max-width:620px;max-height:80vh;overflow-y:auto;animation:su .35s cubic-bezier(.32,.72,0,1);box-shadow:0 -12px 60px rgba(168,85,247,.3);border-top:1px solid var(--bd2)}
-.sl-hdr{padding:1rem 1.1rem .8rem;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between}
+.sl-modal{background:var(--card);border-radius:24px 24px 0 0;width:100%;max-width:620px;max-height:85vh;overflow-y:auto;animation:su .35s cubic-bezier(.32,.72,0,1);box-shadow:0 -12px 60px rgba(168,85,247,.3);border-top:1px solid var(--bd2)}
+.sl-hdr{padding:1rem 1.1rem .8rem;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;gap:.5rem}
 .sl-ttl{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sl-hdr-btns{display:flex;gap:.4rem;align-items:center}
+.sl-action-btn{background:var(--chip);border:1px solid var(--bd);border-radius:8px;color:var(--tx2);font-size:.72rem;font-weight:700;padding:4px 10px;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:all .2s;white-space:nowrap}
+.sl-action-btn:hover{background:var(--bd2);color:var(--tx)}
 .sl-body{padding:.9rem 1.1rem 2rem}
 .sl-item{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.6rem .8rem;background:var(--card2);border:1px solid var(--bd);border-radius:10px;margin-bottom:.5rem}
 .sl-nm{font-family:'Syne',sans-serif;font-size:.85rem;font-weight:800;color:var(--tx)}
@@ -123,8 +171,24 @@ body.light .lk{color:var(--purD)}
 .sl-rm{background:none;border:none;color:var(--muted);cursor:pointer;font-size:.85rem;padding:4px;transition:color .2s;flex-shrink:0}
 .sl-rm:hover{color:var(--cor)}
 .sl-empty{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.85rem}
-.footer{text-align:center;padding:1.5rem 1rem 2.5rem;font-size:.72rem;color:var(--muted);position:relative;z-index:1}
+.cmp-ov{display:none;position:fixed;inset:0;background:var(--ov);z-index:350;align-items:flex-end;justify-content:center;backdrop-filter:blur(8px)}
+.cmp-ov.open{display:flex}
+.cmp-modal{background:var(--card);border-radius:24px 24px 0 0;width:100%;max-width:740px;max-height:92vh;overflow-y:auto;animation:su .35s cubic-bezier(.32,.72,0,1);box-shadow:0 -12px 60px rgba(34,211,238,.22);border-top:1px solid rgba(34,211,238,.28)}
+.cmp-hdr{padding:1rem 1.1rem .8rem;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between}
+.cmp-ttl{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--cyan)}
+.cmp-body{padding:.9rem 1.1rem 2rem;overflow-x:auto}
+.cmp-tbl{width:100%;border-collapse:collapse;font-size:.78rem;min-width:420px}
+.cmp-tbl th{background:var(--card2);padding:.55rem .75rem;text-align:left;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:2px solid var(--bd)}
+.cmp-tbl th.uni-col{color:var(--cyan);font-size:.72rem;font-family:'Syne',sans-serif}
+.cmp-tbl td{padding:.55rem .75rem;border-bottom:1px solid var(--bd);vertical-align:top;color:var(--tx);line-height:1.5}
+.cmp-tbl tr:last-child td{border-bottom:none}
+.cmp-tbl tr:nth-child(even) td{background:rgba(168,85,247,.03)}
+.cmp-row-lbl{font-weight:700;color:var(--muted);font-size:.72rem;white-space:nowrap;background:var(--card2)!important}
+.cmp-best{color:var(--green)!important;font-weight:700}
+.cmp-empty{text-align:center;padding:2.5rem;color:var(--muted);font-size:.85rem;line-height:1.7}
+.footer{text-align:center;padding:1.5rem 1rem 4rem;font-size:.72rem;color:var(--muted);position:relative;z-index:1}
 .card:nth-child(1){animation-delay:.04s}.card:nth-child(2){animation-delay:.08s}.card:nth-child(3){animation-delay:.12s}.card:nth-child(4){animation-delay:.16s}.card:nth-child(5){animation-delay:.2s}.card:nth-child(6){animation-delay:.24s}.card:nth-child(7){animation-delay:.28s}.card:nth-child(8){animation-delay:.32s}.card:nth-child(9){animation-delay:.36s}.card:nth-child(10){animation-delay:.4s}
+
 </style>
 </head>
 <body>
@@ -136,6 +200,7 @@ body.light .lk{color:var(--purD)}
     </div>
     <div class="hdr-btns">
       <button class="tbtn" id="slbtn2" title="My shortlist">⭐</button>
+      <button class="tbtn" id="cmpbtn2" title="Compare courses" style="color:var(--cyan)">⚖️</button>
       <button class="tbtn" id="tbtn" aria-label="Toggle theme">🌙</button>
     </div>
   </div>
@@ -159,6 +224,33 @@ body.light .lk{color:var(--purD)}
   </div>
 </section>
 
+<div class="calc-wrap">
+  <div class="calc-box">
+    <div class="calc-hdr" onclick="toggleCalc()">
+      <div class="calc-title">🎯 UCAS Points Calculator</div>
+      <div class="calc-toggle" id="calcToggleTxt">▼ Open</div>
+    </div>
+    <div class="calc-body" id="calcBody">
+      <p class="calc-intro">Enter your predicted or actual grades to see your estimated UCAS points. Cards will highlight green when you meet the entry requirement, and dim when you don't quite reach it.</p>
+      <div class="calc-grid" id="calcGrid"></div>
+      <div class="calc-result" id="calcResult"><span style="color:var(--muted);font-size:.8rem">Choose a qualification type above to get started ✏️</span></div>
+      <p class="calc-note">This calculator covers standard A-Level, BTEC Extended Diploma and Access to HE grades. For other qualifications use the UCAS tariff calculator at ucas.com. Always verify requirements directly with the university.</p>
+    </div>
+  </div>
+</div>
+
+<div class="deadline-bar">
+  <span class="dl-ic">📅</span>
+  <div class="dl-tx">
+    <strong style="color:var(--gold)">UCAS Equal Consideration Deadline</strong> — 13 January 2027<br>
+    <span style="font-size:.72rem;color:var(--tx2)">Apply by 13 January 2027 at 18:00 UK time for guaranteed equal consideration for September 2027 entry. Applications after this date may still be considered if places remain.</span>
+  </div>
+  <div style="text-align:center;flex-shrink:0">
+    <div class="dl-days" id="daysLeft">—</div>
+    <div style="font-size:.6rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.05em">days left</div>
+  </div>
+</div>
+
 <main class="main">
   <div class="sh">
     <div class="sh-left"><span class="st" id="ptitle">All Courses</span><span class="sb">Sept 2027</span></div>
@@ -169,10 +261,9 @@ body.light .lk{color:var(--purD)}
 
 <div class="footer">
   All UCAS data verified from ucas.com · Always confirm details with the university before applying<br>
-  <span style="color:var(--pur);font-weight:600">Tap any course card for full details ✨</span>
+  <span style="color:var(--pur);font-weight:600">Tap any course card for full details · ⭐ shortlist · ⚖️ compare ✨</span>
 </div>
 
-<!-- Course modal -->
 <div class="ov" id="ov" role="dialog" aria-modal="true">
   <div class="modal" id="modal">
     <div class="drag"><span class="drag-b"></span></div>
@@ -180,6 +271,7 @@ body.light .lk{color:var(--purD)}
       <div class="mr"><span class="mrn" id="mrn">#</span><span class="mrl">CUG rank</span></div>
       <div class="mt"><div class="mu" id="mu"></div><div class="mc" id="mc"></div></div>
       <div class="mbtns">
+        <button class="mcmp" id="mcmp" title="Add to compare">⚖️</button>
         <button class="msl" id="msl" title="Save to shortlist">⭐</button>
         <button class="mx" id="mx" aria-label="Close">✕</button>
       </div>
@@ -188,393 +280,172 @@ body.light .lk{color:var(--purD)}
   </div>
 </div>
 
-<!-- Shortlist modal -->
 <div class="sl-ov" id="slOv" role="dialog" aria-modal="true">
   <div class="sl-modal">
-    <div class="sl-hdr"><span class="sl-ttl">⭐ My Shortlist</span><button class="mx" id="slClose">✕</button></div>
+    <div class="sl-hdr">
+      <span class="sl-ttl">⭐ My Shortlist</span>
+      <div class="sl-hdr-btns">
+        <button class="sl-action-btn" onclick="printShortlist()">🖨️ Print / PDF</button>
+        <button class="mx" id="slClose">✕</button>
+      </div>
+    </div>
     <div class="sl-body" id="slBody"></div>
   </div>
 </div>
 
-<!-- Shortlist bar -->
+<div class="cmp-ov" id="cmpOv" role="dialog" aria-modal="true">
+  <div class="cmp-modal">
+    <div class="drag"><span class="drag-b" style="background:rgba(34,211,238,.4)"></span></div>
+    <div class="cmp-hdr">
+      <span class="cmp-ttl">⚖️ Compare Courses</span>
+      <button class="mx" id="cmpClose">✕</button>
+    </div>
+    <div class="cmp-body" id="cmpBody"></div>
+  </div>
+</div>
+
 <button class="sl-bar" id="slBar">
   <span>⭐</span><span id="slBarTxt">1 course saved</span>
   <button class="sl-bar-x" id="slBarX">✕</button>
 </button>
 
+<button class="cmp-bar" id="cmpBarBtn" style="display:none" onclick="openCmp()">
+  ⚖️ <span id="cmpBarTxt">Compare 0</span>
+</button>
 <script>
-// ─── VERIFIED UCAS DATA ───────────────────────────────────────────────────────
-// All institution codes, course codes and UCAS points sourced directly from ucas.com
-// Course URLs link to verified UCAS course pages
 
-const ALL = [
-{
-  cugRank:39, uni:"Bristol, UWE", course:"Primary Education (QTS)",
-  campus:"Frenchay Campus", city:"Bristol", region:"South West",
-  instCode:"U20", courseCode:"X123", points:"112", duration:"3 years",
-  fee:"£9,790/yr", qual:"BA (Hons)",
-  ucasUrl:"https://www.ucas.com/explore/courses/e372650a-7a58-7a23-d034-cfca73c85f06/course",
-  detail:{
-    gradYear:"2030", duration:"3 years, graduating 2030", locationFull:"Frenchay, Bristol",
-    mapsQ:"Bristol UWE Frenchay Campus",
-    entryReqs:"112 UCAS tariff points. GCSE English Language, Maths and Science at grade C/4 or above. DBS check and occupational health clearance required.",
-    courseFee:"£9,790 per year", openDays:["Check bristol.ac.uk/uwe for 2025–26 open day dates"],
-    accommodation:"Halls available on and near campus from approx £140–£200 per week.",
-    accommodationUrl:"https://www.uwe.ac.uk/life/accommodation"
-  }
-},
-{
-  cugRank:2, uni:"Durham University", course:"Primary Education",
-  campus:"Durham City", city:"Durham", region:"North East",
-  instCode:"D86", courseCode:"X101", points:"128", duration:"3 years",
-  fee:"£9,790/yr", qual:"BA (Hons)",
-  ucasUrl:"https://www.ucas.com/explore/courses/5313e34f-9e20-e7e8-c038-a59f9202e2d8/course",
-  detail:{
-    gradYear:"2030", duration:"3 years, graduating 2030", locationFull:"Durham, County Durham",
-    mapsQ:"Durham University",
-    entryReqs:"128 UCAS tariff points (ABB at A-Level). GCSE English, Maths and Science at grade C/4. QTS awarded through accredited partner Newcastle University. Strong personal statement essential.",
-    courseFee:"£9,790 per year", openDays:["Check durham.ac.uk for 2025–26 open day dates"],
-    accommodation:"All first-year undergraduates are guaranteed accommodation in one of Durham's colleges, from approx £150–£210 per week.",
-    accommodationUrl:"https://www.durham.ac.uk/colleges-and-student-experience/colleges/"
-  }
-},
-{
-  cugRank:10, uni:"University of Leeds", course:"Primary Education with Qualified Teacher Status (5–11)",
-  campus:"Main Campus", city:"Leeds", region:"Yorkshire",
-  instCode:"L23", courseCode:"X120", points:"120", duration:"3 years",
-  fee:"£9,790/yr", qual:"BA (Hons)",
-  ucasUrl:"https://digital.ucas.com/coursedisplay/courses/1aed88a5-761d-4817-9e81-dd3e8ebf4562",
-  detail:{
-    gradYear:"2030", duration:"3 years, graduating 2030", locationFull:"Leeds, West Yorkshire",
-    mapsQ:"University of Leeds",
-    entryReqs:"120 UCAS tariff points (BBB at A-Level). GCSE English Language, Maths and Science at grade C/4. QTS awarded through partner Red Kite Teacher Training (Ofsted Outstanding). Interview required.",
-    courseFee:"£9,790 per year", openDays:["Check leeds.ac.uk for 2025–26 open day dates"],
-    accommodation:"First-year students are guaranteed university accommodation. Self-catered flats from approx £130–£185 per week.",
-    accommodationUrl:"https://accommodation.leeds.ac.uk/"
-  }
-},
-{
-  cugRank:72, uni:"Leeds Beckett University", course:"Primary Education (5–11) with QTS",
-  campus:"Headingley Campus", city:"Leeds", region:"Yorkshire",
-  instCode:"L27", courseCode:"X125", points:"120", duration:"3 years",
-  fee:"£9,790/yr", qual:"BA (Hons)",
-  ucasUrl:"https://digital.ucas.com/coursedisplay/courses/69c75f3b-0d2d-43b3-98f1-a1600bceff5e",
-  detail:{
-    gradYear:"2030", duration:"3 years, graduating 2030", locationFull:"Headingley, Leeds",
-    mapsQ:"Leeds Beckett University Headingley Campus",
-    entryReqs:"120 UCAS tariff points (minimum 80 from two A-Levels). GCSE English Language, Maths, Science and two other subjects at grade C/4. Interview required. No formal exams — assessed through coursework.",
-    courseFee:"£9,790 per year", openDays:["Check leedsbeckett.ac.uk for 2025–26 open day dates"],
-    accommodation:"Halls available across Leeds from approx £115–£170 per week.",
-    accommodationUrl:"https://www.leedsbeckett.ac.uk/student-life/accommodation/"
-  }
-},
-{
-  cugRank:37, uni:"Nottingham Trent University", course:"Primary Education (QTS)",
-  campus:"Clifton Campus", city:"Nottingham", region:"Midlands",
-  instCode:"N91", courseCode:"X101", points:"112–120", duration:"4 years",
-  fee:"£9,790/yr", qual:"BA (Hons)",
-  ucasUrl:"https://digital.ucas.com/coursedisplay/courses/96bf8e31-7d3d-560f-5b12-409e963d8f08",
-  detail:{
-    gradYear:"2031", duration:"4 years, graduating 2031 (integrated Masters credits in final year)", locationFull:"Clifton, Nottingham",
-    mapsQ:"Nottingham Trent University Clifton Campus",
-    entryReqs:"112–120 UCAS tariff points from three A-Levels (AS levels and EPQ not accepted). GCSE English, Maths and Science at grade C/4. Note: this is a 4-year course, graduating 2031 not 2030.",
-    courseFee:"£9,790 per year", openDays:["Check ntu.ac.uk for 2025–26 open day dates"],
-    accommodation:"On-campus and partner accommodation available from approx £120–£180 per week.",
-    accommodationUrl:"https://www.ntu.ac.uk/life-at-ntu/accommodation"
-  }
-},
-{
-  cugRank:33, uni:"Manchester Metropolitan University", course:"Primary Education with QTS",
-  campus:"Main Site", city:"Manchester", region:"North West",
-  instCode:"M40", courseCode:"X120", points:"120", duration:"3 years",
-  fee:"£9,790/yr", qual:"BA (Hons)",
-  ucasUrl:"https://digital.ucas.com/coursedisplay/courses/caa2b53f-8a1f-caf9-3c46-158fdd690f05",
-  detail:{
-    gradYear:"2030", duration:"3 years, graduating 2030", locationFull:"Manchester, Greater Manchester",
-    mapsQ:"Manchester Metropolitan University",
-    entryReqs:"120 UCAS tariff points (BBB at A-Level). GCSE English Language, Maths and Science at grade C/4. Interview required. Trains over 500 teachers per year. Award-winning course (MMU Students' Union 2023 & 2024).",
-    courseFee:"£9,790 per year", openDays:["Check mmu.ac.uk for 2025–26 open day dates"],
-    accommodation:"City-centre halls from approx £115–£170 per week.",
-    accommodationUrl:"https://www.mmu.ac.uk/study/accommodation"
-  }
-},
-{
-  cugRank:13, uni:"University of Reading", course:"Primary Education",
-  campus:"Main Site", city:"Reading", region:"South East",
-  instCode:"R12", courseCode:"X1S2", points:"BBB at A-Level", duration:"3 years",
-  fee:"£9,535/yr", qual:"BA (Hons)",
-  ucasUrl:"https://digital.ucas.com/coursedisplay/courses/1398509",
-  detail:{
-    gradYear:"2030", duration:"3 years, graduating 2030", locationFull:"Reading, Berkshire",
-    mapsQ:"University of Reading",
-    entryReqs:"BBB at A-Level (note: Reading uses A-Level grades not UCAS tariff points for this course). GCSE English Language, Maths and Science at grade C/4. Ranked Top 15 for Education (CUG). School experience valued.",
-    courseFee:"£9,535 per year", openDays:["Check reading.ac.uk for 2025–26 open day dates"],
-    accommodation:"Guaranteed for first-year students. Campus-based halls from approx £125–£175 per week.",
-    accommodationUrl:"https://www.reading.ac.uk/accommodation/"
-  }
-},
-{
-  cugRank:17, uni:"University of Winchester", course:"Primary Education with QTS",
-  campus:"Main Site", city:"Winchester", region:"South East",
-  instCode:"W76", courseCode:"X120", points:"120", duration:"3 years",
-  fee:"£9,790/yr", qual:"BA (Hons)",
-  ucasUrl:"https://digital.ucas.com/coursedisplay/courses/779f6d7d-670c-1da3-126e-8628d920ccb5",
-  detail:{
-    gradYear:"2030", duration:"3 years, graduating 2030", locationFull:"Winchester, Hampshire",
-    mapsQ:"University of Winchester",
-    entryReqs:"120 UCAS tariff points (BCC at A-Level). GCSE English, Maths and Science at grade C/4. Ofsted Outstanding Institute of Education. Interview required.",
-    courseFee:"£9,790 per year", openDays:["Check winchester.ac.uk for 2025–26 open day dates"],
-    accommodation:"First-year students guaranteed on-campus halls. Self-catered from approx £110–£165 per week.",
-    accommodationUrl:"https://www.winchester.ac.uk/student-life/accommodation/"
-  }
-},
-{
-  cugRank:61, uni:"Bath Spa University", course:"Primary Education (5–11) with QTS",
-  campus:"Newton Park", city:"Bath", region:"South West",
-  instCode:"B20", courseCode:"X120", points:"112", duration:"3 years",
-  fee:"£9,790/yr", qual:"BA (Hons)",
-  ucasUrl:"https://digital.ucas.com/coursedisplay/courses/a0be3770-a59e-4611-868e-d664ca206750",
-  detail:{
-    gradYear:"2030", duration:"3 years, graduating 2030", locationFull:"Bath, Somerset",
-    mapsQ:"Bath Spa University Newton Park",
-    entryReqs:"112 UCAS tariff points (BBB–BBC at A-Level). GCSE English, Maths and Science at grade C/4. Co-created with 400+ local schools. School placements begin in Year 1. Develop two subject specialisms.",
-    courseFee:"£9,790 per year", openDays:["Check bathspa.ac.uk for 2025–26 open day dates"],
-    accommodation:"First-year accommodation on Newton Park campus from approx £115–£160 per week.",
-    accommodationUrl:"https://www.bathspa.ac.uk/student-life/accommodation/"
-  }
-},
-{
-  cugRank:69, uni:"Leeds Trinity University", course:"Primary Education (Later Years 5–11) with QTS",
-  campus:"Horsforth Campus", city:"Leeds", region:"Yorkshire",
-  instCode:"L24", courseCode:"X122", points:"96–112", duration:"3 years",
-  fee:"£9,790/yr", qual:"BA (Hons)",
-  ucasUrl:"https://www.ucas.com/explore/courses/f6005e0c-4877-4893-ad57-a645a65e0549",
-  detail:{
-    gradYear:"2030", duration:"3 years, graduating 2030", locationFull:"Horsforth, Leeds",
-    mapsQ:"Leeds Trinity University Horsforth",
-    entryReqs:"96–112 UCAS tariff points. GCSE English Language/Literature, Maths and Science at grade C/4. Minimum 26 weeks assessed school experience across the three years.",
-    courseFee:"£9,790 per year", openDays:["Check leedstrinity.ac.uk for 2025–26 open day dates"],
-    accommodation:"On-campus halls from approx £100–£150 per week.",
-    accommodationUrl:"https://www.leedstrinity.ac.uk/student-life/accommodation/"
-  }
-},
-{
-  cugRank:69, uni:"Leeds Trinity University", course:"Primary Education (Early Years 3–7) with QTS",
-  campus:"Horsforth Campus", city:"Leeds", region:"Yorkshire",
-  instCode:"L24", courseCode:"X120", points:"96–112", duration:"3 years",
-  fee:"£9,790/yr", qual:"BA (Hons)",
-  ucasUrl:"https://digital.ucas.com/coursedisplay/courses/0dc05596-6b47-6575-3ed5-a563ea935223",
-  detail:{
-    gradYear:"2030", duration:"3 years, graduating 2030", locationFull:"Horsforth, Leeds",
-    mapsQ:"Leeds Trinity University Horsforth",
-    entryReqs:"96–112 UCAS tariff points. GCSE English Language/Literature, Maths and Science at grade C/4. Specialises in Early Years Foundation Stage and Key Stage 1.",
-    courseFee:"£9,790 per year", openDays:["Check leedstrinity.ac.uk for 2025–26 open day dates"],
-    accommodation:"On-campus halls from approx £100–£150 per week.",
-    accommodationUrl:"https://www.leedstrinity.ac.uk/student-life/accommodation/"
-  }
-},
-{
-  cugRank:65, uni:"University of Worcester", course:"Primary Teaching with QTS (5–11)",
-  campus:"City Campus", city:"Worcester", region:"Midlands",
-  instCode:"W80", courseCode:"X120", points:"96–112", duration:"3 years",
-  fee:"£9,790/yr", qual:"BA (Hons)",
-  ucasUrl:"https://digital.ucas.com/coursedisplay/courses/2745523d-0510-612b-a8ed-80fc8c6417e1",
-  detail:{
-    gradYear:"2030", duration:"3 years, graduating 2030", locationFull:"Worcester, Worcestershire",
-    mapsQ:"University of Worcester City Campus",
-    entryReqs:"96–112 UCAS tariff points. GCSE English, Maths and Science at grade C/4. Ofsted Outstanding 2023 for teacher training. First in UK for graduate employment (LEO data 2024).",
-    courseFee:"£9,790 per year", openDays:["Check worcester.ac.uk for 2025–26 open day dates"],
-    accommodation:"Accommodation guarantee for first-year students. On-campus options from approx £100–£155 per week.",
-    accommodationUrl:"https://www.worcester.ac.uk/student-life/accommodation/"
-  }
-},
-{
-  cugRank:43, uni:"Liverpool Hope University", course:"Early Education Primary (3–7) with QTS",
-  campus:"Hope Park", city:"Liverpool", region:"North West",
-  instCode:"L46", courseCode:"X121", points:"104–112", duration:"3 years",
-  fee:"£9,790/yr", qual:"BA (Hons)",
-  ucasUrl:"https://digital.ucas.com/coursedisplay/courses/9ee60d43-e3e4-4724-9767-dc09b25b70ca",
-  detail:{
-    gradYear:"2030", duration:"3 years, graduating 2030", locationFull:"Liverpool, Merseyside",
-    mapsQ:"Liverpool Hope University Hope Park",
-    entryReqs:"104–112 UCAS tariff points from a minimum of two A-Levels. GCSE English, Maths and Science at grade C/4. Significant teaching experience in a wide range of partner schools throughout the course.",
-    courseFee:"£9,790 per year", openDays:["Check hope.ac.uk for 2025–26 open day dates"],
-    accommodation:"On-campus halls from approx £110–£160 per week.",
-    accommodationUrl:"https://www.hope.ac.uk/student-life/accommodation/"
-  }
-},
-{
-  cugRank:59, uni:"Liverpool John Moores University", course:"Primary Education with Qualified Teacher Status (QTS)",
-  campus:"Mount Pleasant Campus", city:"Liverpool", region:"North West",
-  instCode:"L51", courseCode:"X120", points:"104–120", duration:"3 years",
-  fee:"£9,790/yr", qual:"BA (Hons)",
-  ucasUrl:"https://www.ucas.com/explore/courses/d4aacb1f-04b9-cfc6-2afc-789cee37acc0",
-  detail:{
-    gradYear:"2030", duration:"3 years, graduating 2030", locationFull:"Liverpool, Merseyside",
-    mapsQ:"Liverpool John Moores University Mount Pleasant",
-    entryReqs:"104–120 UCAS tariff points (BBB at A-Level typical). GCSE English, Maths and Science at grade C/4. Applicants must be aged 18 by 1 September of entry year. 100% of graduates in work or study within 15 months.",
-    courseFee:"£9,790 per year", openDays:["Check ljmu.ac.uk for 2025–26 open day dates"],
-    accommodation:"City-centre halls from approx £115–£165 per week.",
-    accommodationUrl:"https://www.ljmu.ac.uk/study/student-accommodation"
-  }
-},
-{
-  cugRank:44, uni:"Edge Hill University", course:"Primary Education with QTS (5–11)",
-  campus:"Ormskirk (Main Campus)", city:"Ormskirk", region:"North West",
-  instCode:"E42", courseCode:"0P59", points:"112–120", duration:"3 years",
-  fee:"£9,790/yr", qual:"BA (Hons)",
-  ucasUrl:"https://www.ucas.com/explore/courses/e7241d9d-4b1a-9ec0-badd-37456f036e8c",
-  detail:{
-    gradYear:"2030", duration:"3 years, graduating 2030", locationFull:"Ormskirk, Lancashire",
-    mapsQ:"Edge Hill University Ormskirk",
-    entryReqs:"112–120 UCAS tariff points. GCSE English Language, Maths and Science at grade C/4. No specific A-Level subjects required. Fair Entry Criteria policy — eligible applicants may receive up to two-grade reduction.",
-    courseFee:"£9,790 per year", openDays:["Check edgehill.ac.uk for 2025–26 open day dates"],
-    accommodation:"Guaranteed for first-year students on award-winning campus from approx £100–£150 per week.",
-    accommodationUrl:"https://www.edgehill.ac.uk/student-life/accommodation/"
-  }
-},
-{
-  cugRank:77, uni:"University of Sunderland", course:"Primary Education with QTS",
-  campus:"Sir Tom Cowie Campus", city:"Sunderland", region:"North East",
-  instCode:"S75", courseCode:"X120", points:"104–120", duration:"3 years",
-  fee:"£9,790/yr", qual:"BA (Hons)",
-  ucasUrl:"https://digital.ucas.com/coursedisplay/courses/e37910fe-6fa1-d5d1-d680-2d1afcbfea26",
-  detail:{
-    gradYear:"2030", duration:"3 years, graduating 2030", locationFull:"Sunderland, Tyne and Wear",
-    mapsQ:"University of Sunderland Sir Tom Cowie Campus",
-    entryReqs:"104–120 UCAS tariff points. GCSE English Language, Maths and Science at grade C/4. Teaching placements account for 70 credits. Graduates fully qualified to teach at primary level.",
-    courseFee:"£9,790 per year", openDays:["Check sunderland.ac.uk for 2025–26 open day dates"],
-    accommodation:"On-campus halls from approx £100–£150 per week.",
-    accommodationUrl:"https://www.sunderland.ac.uk/student-life/accommodation/"
-  }
-},
-{
-  cugRank:47, uni:"York St John University", course:"Primary Education (5–11)",
-  campus:"York St John University", city:"York", region:"Yorkshire",
-  instCode:"Y75", courseCode:"X320", points:"96–112", duration:"3 years",
-  fee:"£9,790/yr", qual:"BA (Hons)",
-  ucasUrl:"https://www.ucas.com/explore/courses/134bd43b-b2af-cb1c-5b59-eca6de31bbea",
-  detail:{
-    gradYear:"2030", duration:"3 years, graduating 2030", locationFull:"York, North Yorkshire",
-    mapsQ:"York St John University",
-    entryReqs:"96–112 UCAS tariff points. Five GCSEs at grade C/4 including English Language, Maths and Science. Interview required. Choose 5–11 or 3–7 route on application. Ofsted 2022: trainees are 'well prepared for a career in teaching'.",
-    courseFee:"£9,790 per year", openDays:["Check yorksj.ac.uk for 2025–26 open day dates"],
-    accommodation:"City-centre campus halls from approx £105–£160 per week.",
-    accommodationUrl:"https://www.yorksj.ac.uk/student-life/accommodation/"
-  }
-},
-{
-  cugRank:51, uni:"Birmingham City University", course:"Primary Education with QTS",
-  campus:"University House", city:"Birmingham", region:"Midlands",
-  instCode:"B25", courseCode:"X120", points:"112", duration:"3 years",
-  fee:"£9,790/yr", qual:"BA (Hons)",
-  ucasUrl:"https://www.ucas.com/explore/courses/510b1281-7fb8-1d79-1214-933fd864be4f",
-  detail:{
-    gradYear:"2030", duration:"3 years, graduating 2030", locationFull:"Birmingham, West Midlands",
-    mapsQ:"Birmingham City University University House",
-    entryReqs:"Standard offer 112 UCAS tariff points. Accelerate offer from 80 points. GCSE English, Maths and Science at grade C/4. Interview required. Specialise in age phases 3–7 or 5–11.",
-    courseFee:"£9,790 per year", openDays:["Check bcu.ac.uk for 2025–26 open day dates"],
-    accommodation:"City-centre halls from approx £110–£160 per week.",
-    accommodationUrl:"https://www.bcu.ac.uk/student-info/accommodation"
-  }
-},
-{
-  cugRank:83, uni:"Canterbury Christ Church University", course:"Primary Education (QTS)",
-  campus:"Main Site", city:"Canterbury", region:"South East",
-  instCode:"C10", courseCode:"X122", points:"112", duration:"3 years",
-  fee:"£9,535/yr", qual:"BA (Hons)",
-  ucasUrl:"https://digital.ucas.com/coursedisplay/courses/fa2b6dc8-3268-6ccd-14a2-34464c29cbd7",
-  detail:{
-    gradYear:"2030", duration:"3 years, graduating 2030", locationFull:"Canterbury, Kent",
-    mapsQ:"Canterbury Christ Church University",
-    entryReqs:"112 UCAS tariff points (BBC at A-Level). GCSE English Language, Maths and Science at grade C/4. Only undergraduate teacher training provider in Kent. 98% employment or further study within 15 months (Graduate Outcomes 2025).",
-    courseFee:"£9,535 per year", openDays:["Check canterbury.ac.uk for 2025–26 open day dates"],
-    accommodation:"Halls available in the historic city from approx £100–£155 per week.",
-    accommodationUrl:"https://www.canterbury.ac.uk/student-life/accommodation/"
-  }
-},
-{
-  cugRank:28, uni:"University of Roehampton", course:"Primary Education (QTS) KS1/KS2",
-  campus:"Main Site", city:"London", region:"London",
-  instCode:"R48", courseCode:"4N56", points:"112–128", duration:"3 years",
-  fee:"£9,790/yr", qual:"BA (Hons)",
-  ucasUrl:"https://digital.ucas.com/coursedisplay/courses/829783c2-4aa7-5534-4129-b6304a22eabc",
-  detail:{
-    gradYear:"2030", duration:"3 years, graduating 2030", locationFull:"Roehampton, South West London",
-    mapsQ:"University of Roehampton London",
-    entryReqs:"112–128 UCAS tariff points. Please see roehampton.ac.uk for full entry requirements. 24 weeks school placement in 400+ partner schools. Ofsted Outstanding 2023. Training teachers for 180+ years — longer than any other UK HEI.",
-    courseFee:"£9,790 per year", openDays:["Check roehampton.ac.uk for 2025–26 open day dates"],
-    accommodation:"On-campus village-style halls from approx £150–£210 per week.",
-    accommodationUrl:"https://www.roehampton.ac.uk/student-life/accommodation/"
-  }
-},
-{
-  cugRank:28, uni:"University of Roehampton", course:"Primary Education (QTS) Foundation Stage/KS1",
-  campus:"Main Site", city:"London", region:"London",
-  instCode:"R48", courseCode:"4D22", points:"112–128", duration:"3 years",
-  fee:"£9,790/yr", qual:"BA (Hons)",
-  ucasUrl:"https://www.ucas.com/explore/search/courses?query=Primary+Education+QTS+Roehampton",
-  detail:{
-    gradYear:"2030", duration:"3 years, graduating 2030", locationFull:"Roehampton, South West London",
-    mapsQ:"University of Roehampton London",
-    entryReqs:"112–128 UCAS tariff points. Foundation Stage and Key Stage 1 specialism. Please see roehampton.ac.uk for full entry requirements. Ofsted Outstanding 2023.",
-    courseFee:"£9,790 per year", openDays:["Check roehampton.ac.uk for 2025–26 open day dates"],
-    accommodation:"On-campus village-style halls from approx £150–£210 per week.",
-    accommodationUrl:"https://www.roehampton.ac.uk/student-life/accommodation/"
-  }
-},
-{
-  cugRank:84, uni:"University of East London", course:"Primary Education with QTS",
-  campus:"Stratford Campus", city:"London", region:"London",
-  instCode:"E28", courseCode:"X120", points:"80–96", duration:"3 years",
-  fee:"£9,790/yr", qual:"BA (Hons)",
-  ucasUrl:"https://www.ucas.com/explore/courses/be6ea8d3-4469-45ff-bfd3-d022968445be",
-  detail:{
-    gradYear:"2030", duration:"3 years, graduating 2030", locationFull:"Stratford, East London",
-    mapsQ:"University of East London Stratford",
-    entryReqs:"80–96 UCAS tariff points. GCSE English Language, Maths and Science at grade C/4. Contextual offer scheme available. 97% positive assessment and feedback score (NSS 2025).",
-    courseFee:"£9,790 per year", openDays:["Check uel.ac.uk for 2025–26 open day dates"],
-    accommodation:"Modern on-campus halls in Stratford from approx £155–£215 per week.",
-    accommodationUrl:"https://www.uel.ac.uk/life/accommodation"
-  }
-},
-{
-  cugRank:81, uni:"Middlesex University", course:"Primary Education (QTS)",
-  campus:"Hendon Campus", city:"London", region:"London",
-  instCode:"M99", courseCode:"X120", points:"112", duration:"3 years",
-  fee:"£9,790/yr", qual:"BA (Hons)",
-  ucasUrl:"https://digital.ucas.com/coursedisplay/courses/0a4f9c14-bb4c-ae3f-c0f7-16be2aa76a90",
-  detail:{
-    gradYear:"2030", duration:"3 years, graduating 2030", locationFull:"Hendon, North London",
-    mapsQ:"Middlesex University Hendon London",
-    entryReqs:"112 UCAS tariff points. GCSE English Language, Maths and Science at grade C/4. Interview required. Strong focus on diversity, inclusion and multilingualism.",
-    courseFee:"£9,790 per year", openDays:["Check mdx.ac.uk for 2025–26 open day dates"],
-    accommodation:"On-campus and nearby accommodation from approx £145–£205 per week.",
-    accommodationUrl:"https://www.mdx.ac.uk/life/student-accommodation"
-  }
-},
-{
-  cugRank:73, uni:"University of Wolverhampton", course:"Primary Education",
-  campus:"Main Site", city:"Wolverhampton", region:"Midlands",
-  instCode:"W67", courseCode:"X120", points:"96", duration:"3 years",
-  fee:"£9,790/yr", qual:"BA (Hons)",
-  ucasUrl:"https://digital.ucas.com/coursedisplay/courses",
-  detail:{
-    gradYear:"2030", duration:"3 years, graduating 2030", locationFull:"Wolverhampton, West Midlands",
-    mapsQ:"University of Wolverhampton",
-    entryReqs:"96 UCAS tariff points. GCSE English, Maths and Science at grade C/4. High standards of accuracy required in personal statement (professional teaching standards). 95% student satisfaction (NSS 2025).",
-    courseFee:"£9,790 per year", openDays:["Check wlv.ac.uk for 2025–26 open day dates"],
-    accommodation:"City-centre and campus halls from approx £105–£155 per week.",
-    accommodationUrl:"https://www.wlv.ac.uk/student-life/accommodation/"
-  }
-}
+const ALL=[
+{cugRank:2,uni:"Durham University",course:"Primary Education",campus:"Durham City",city:"Durham",region:"North East",instCode:"D86",courseCode:"X101",points:"128",minPts:128,duration:"3 years",fee:"£9,790/yr",qual:"BA (Hons)",ofsted:false,
+ucasUrl:"https://www.ucas.com/explore/courses/5313e34f-9e20-e7e8-c038-a59f9202e2d8/course",
+psTips:["Durham requires strong evidence of school experience — aim for at least two weeks in primary settings before applying","Mention your understanding of the role of research in teaching, as Durham's ITT curriculum is research-led and evidence-informed","QTS is awarded through Newcastle University so show you understand and embrace the university-school partnership model","Demonstrate genuine academic curiosity — Durham values reflective, scholarly practitioners as much as classroom-ready ones"],
+detail:{gradYear:"2030",duration:"3 years, graduating 2030",locationFull:"Durham, County Durham",mapsQ:"Durham University",entryReqs:"128 UCAS tariff points (ABB at A-Level). GCSE English, Maths and Science at grade C/4. QTS awarded through accredited partner Newcastle University. Strong personal statement essential.",courseFee:"£9,790 per year",openDays:["Check durham.ac.uk for 2025–26 open day dates"],accommodation:"All first-year undergraduates are guaranteed accommodation in one of Durham's colleges, from approx £150–£210 per week.",accommodationUrl:"https://www.durham.ac.uk/colleges-and-student-experience/colleges/"}},
+
+{cugRank:10,uni:"University of Leeds",course:"Primary Education with QTS (5–11)",campus:"Main Campus",city:"Leeds",region:"Yorkshire",instCode:"L23",courseCode:"X120",points:"120",minPts:120,duration:"3 years",fee:"£9,790/yr",qual:"BA (Hons)",ofsted:false,
+ucasUrl:"https://digital.ucas.com/coursedisplay/courses/1aed88a5-761d-4817-9e81-dd3e8ebf4562",
+psTips:["Leeds delivers this course in partnership with Red Kite Teacher Training (Ofsted Outstanding) — mention your enthusiasm for collaborative, school-based initial teacher training","Highlight any experience specifically with 5–11 year olds, including volunteering, tutoring or coaching","Leeds weaves outdoor learning, climate change and digital education into the curriculum — show genuine interest in these contemporary approaches","Demonstrate your understanding of inclusion and diverse learning needs as Leeds places equity at the heart of its teacher education"],
+detail:{gradYear:"2030",duration:"3 years, graduating 2030",locationFull:"Leeds, West Yorkshire",mapsQ:"University of Leeds",entryReqs:"120 UCAS tariff points (BBB at A-Level). GCSE English Language, Maths and Science at grade C/4. QTS awarded through partner Red Kite Teacher Training (Ofsted Outstanding). Interview required.",courseFee:"£9,790 per year",openDays:["Check leeds.ac.uk for 2025–26 open day dates"],accommodation:"First-year students are guaranteed university accommodation. Self-catered flats from approx £130–£185 per week.",accommodationUrl:"https://accommodation.leeds.ac.uk/"}},
+
+{cugRank:13,uni:"University of Reading",course:"Primary Education",campus:"Main Site",city:"Reading",region:"South East",instCode:"R12",courseCode:"X1S2",points:"BBB at A-Level",minPts:null,duration:"3 years",fee:"£9,535/yr",qual:"BA (Hons)",ofsted:false,
+ucasUrl:"https://digital.ucas.com/coursedisplay/courses/1398509",
+psTips:["Reading uses A-Level grades not UCAS tariff — emphasise academic achievement and breadth across subjects","Reading's Institute of Education has award-winning tutors, so show genuine interest in education as an academic discipline alongside teaching as a profession","Mention any subject specialism that could strengthen your primary curriculum knowledge, particularly in science, maths or English","Contextualise your school experience thoughtfully — Reading values reflective writing about what you observed and what it taught you"],
+detail:{gradYear:"2030",duration:"3 years, graduating 2030",locationFull:"Reading, Berkshire",mapsQ:"University of Reading",entryReqs:"BBB at A-Level (note: Reading uses A-Level grades not UCAS tariff points for this course). GCSE English Language, Maths and Science at grade C/4. School experience valued.",courseFee:"£9,535 per year",openDays:["Check reading.ac.uk for 2025–26 open day dates"],accommodation:"Guaranteed for first-year students. Campus-based halls from approx £125–£175 per week.",accommodationUrl:"https://www.reading.ac.uk/accommodation/"}},
+
+{cugRank:17,uni:"University of Winchester",course:"Primary Education with QTS",campus:"Main Site",city:"Winchester",region:"South East",instCode:"W76",courseCode:"X120",points:"120",minPts:120,duration:"3 years",fee:"£9,790/yr",qual:"BA (Hons)",ofsted:true,
+ucasUrl:"https://digital.ucas.com/coursedisplay/courses/779f6d7d-670c-1da3-126e-8628d920ccb5",
+psTips:["Winchester is Ofsted Outstanding — their admissions team look for candidates who can articulate what outstanding teaching actually looks like in practice","Winchester embeds teacher identity development throughout the whole course — start thinking now about who you want to be as a teacher and why","Many local headteachers are Winchester graduates, so mention your enthusiasm for the strong regional school network","Show commitment to inclusive practice and Additional Educational Needs as these are central to Winchester's teaching ethos"],
+detail:{gradYear:"2030",duration:"3 years, graduating 2030",locationFull:"Winchester, Hampshire",mapsQ:"University of Winchester",entryReqs:"120 UCAS tariff points (BCC at A-Level). GCSE English, Maths and Science at grade C/4. Ofsted Outstanding Institute of Education. Interview required.",courseFee:"£9,790 per year",openDays:["Check winchester.ac.uk for 2025–26 open day dates"],accommodation:"First-year students guaranteed on-campus halls. Self-catered from approx £110–£165 per week.",accommodationUrl:"https://www.winchester.ac.uk/student-life/accommodation/"}},
+
+{cugRank:28,uni:"University of Roehampton",course:"Primary Education (QTS) KS1/KS2",campus:"Main Site",city:"London",region:"London",instCode:"R48",courseCode:"4N56",points:"112–128",minPts:112,duration:"3 years",fee:"£9,790/yr",qual:"BA (Hons)",ofsted:true,
+ucasUrl:"https://digital.ucas.com/coursedisplay/courses/829783c2-4aa7-5534-4129-b6304a22eabc",
+psTips:["Roehampton has trained teachers for over 180 years — acknowledging this heritage and what it means for quality shows you have genuinely researched the course","Ofsted Outstanding 2023 — mention your ambition to train at the highest standard and how Roehampton's rating specifically drew you to apply","The course includes 24 weeks across 400+ partner schools — show real enthusiasm for school-based, practice-heavy training","London's diverse communities are right on your doorstep — mention your interest in multilingualism, EAL and inclusive urban primary teaching"],
+detail:{gradYear:"2030",duration:"3 years, graduating 2030",locationFull:"Roehampton, South West London",mapsQ:"University of Roehampton London",entryReqs:"112–128 UCAS tariff points. Please see roehampton.ac.uk for full entry requirements. 24 weeks school placement in 400+ partner schools. Ofsted Outstanding 2023.",courseFee:"£9,790 per year",openDays:["Check roehampton.ac.uk for 2025–26 open day dates"],accommodation:"On-campus village-style halls from approx £150–£210 per week.",accommodationUrl:"https://www.roehampton.ac.uk/student-life/accommodation/"}},
+
+{cugRank:28,uni:"University of Roehampton",course:"Primary Education (QTS) Foundation Stage/KS1",campus:"Main Site",city:"London",region:"London",instCode:"R48",courseCode:"4D22",points:"112–128",minPts:112,duration:"3 years",fee:"£9,790/yr",qual:"BA (Hons)",ofsted:true,
+ucasUrl:"https://www.ucas.com/explore/search/courses?query=Primary+Education+QTS+Roehampton",
+psTips:["This route specialises in Foundation Stage and KS1 — make a clear and compelling case for why you are drawn to the youngest primary children and early development specifically","Reference play-based learning and the EYFS statutory framework to show you already understand the curriculum you will be working with","Any experience in nurseries, reception classes or with under-7s in any context will significantly strengthen your application for this route","Roehampton is Ofsted Outstanding — demonstrate high professional aspirations from the very first lines of your personal statement"],
+detail:{gradYear:"2030",duration:"3 years, graduating 2030",locationFull:"Roehampton, South West London",mapsQ:"University of Roehampton London",entryReqs:"112–128 UCAS tariff points. Foundation Stage and Key Stage 1 specialism. Please see roehampton.ac.uk for full entry requirements. Ofsted Outstanding 2023.",courseFee:"£9,790 per year",openDays:["Check roehampton.ac.uk for 2025–26 open day dates"],accommodation:"On-campus village-style halls from approx £150–£210 per week.",accommodationUrl:"https://www.roehampton.ac.uk/student-life/accommodation/"}},
+
+{cugRank:33,uni:"Manchester Metropolitan University",course:"Primary Education with QTS",campus:"Main Site",city:"Manchester",region:"North West",instCode:"M40",courseCode:"X120",points:"120",minPts:120,duration:"3 years",fee:"£9,790/yr",qual:"BA (Hons)",ofsted:false,
+ucasUrl:"https://digital.ucas.com/coursedisplay/courses/caa2b53f-8a1f-caf9-3c46-158fdd690f05",
+psTips:["MMU won Best Course of the Year from their own Students' Union in both 2023 and 2024 — show you've researched the student experience not just the academic content","The course trains over 500 teachers a year — demonstrate you're genuinely excited about being part of a large, vibrant, connected teaching community","Greater Manchester has excellent school placement partnerships — mention your enthusiasm for the diverse urban school communities you'd work in","The course develops strong research skills — show you're interested in understanding and applying educational research, not just classroom practice"],
+detail:{gradYear:"2030",duration:"3 years, graduating 2030",locationFull:"Manchester, Greater Manchester",mapsQ:"Manchester Metropolitan University",entryReqs:"120 UCAS tariff points (BBB at A-Level). GCSE English Language, Maths and Science at grade C/4. Interview required. Trains over 500 teachers per year.",courseFee:"£9,790 per year",openDays:["Check mmu.ac.uk for 2025–26 open day dates"],accommodation:"City-centre halls from approx £115–£170 per week.",accommodationUrl:"https://www.mmu.ac.uk/study/accommodation"}},
+
+{cugRank:37,uni:"Nottingham Trent University",course:"Primary Education (QTS)",campus:"Clifton Campus",city:"Nottingham",region:"Midlands",instCode:"N91",courseCode:"X101",points:"112–120",minPts:112,duration:"4 years",fee:"£9,790/yr",qual:"BA (Hons)",ofsted:false,
+ucasUrl:"https://digital.ucas.com/coursedisplay/courses/96bf8e31-7d3d-560f-5b12-409e963d8f08",
+psTips:["NTU is a 4-year course not 3 — directly address this in your statement and explain why the extra time and the Masters-level credits in the final year actually appeal to you","The teaching rooms at NTU are designed to mirror real primary classrooms — show you value hands-on, immersive learning environments","NTU places a strong emphasis on meeting diverse learner needs — reference specific experience with children who have varied learning styles or SEND","The extended course gives more time to develop real curriculum depth — mention a subject you'd love to specialise in and why it matters to primary learners"],
+detail:{gradYear:"2031",duration:"4 years, graduating 2031 (integrated Masters credits in final year)",locationFull:"Clifton, Nottingham",mapsQ:"Nottingham Trent University Clifton Campus",entryReqs:"112–120 UCAS tariff points from three A-Levels (AS levels and EPQ not accepted). GCSE English, Maths and Science at grade C/4. Note: this is a 4-year course, graduating 2031 not 2030.",courseFee:"£9,790 per year",openDays:["Check ntu.ac.uk for 2025–26 open day dates"],accommodation:"On-campus and partner accommodation available from approx £120–£180 per week.",accommodationUrl:"https://www.ntu.ac.uk/life-at-ntu/accommodation"}},
+
+{cugRank:39,uni:"Bristol, UWE",course:"Primary Education (QTS)",campus:"Frenchay Campus",city:"Bristol",region:"South West",instCode:"U20",courseCode:"X123",points:"112",minPts:112,duration:"3 years",fee:"£9,790/yr",qual:"BA (Hons)",ofsted:false,
+ucasUrl:"https://www.ucas.com/explore/courses/e372650a-7a58-7a23-d034-cfca73c85f06/course",
+psTips:["UWE Bristol co-creates this course with over 400 local schools — show enthusiasm for a genuine school-university partnership model where practitioners shape the curriculum","Bristol is a culturally vibrant and diverse city — mention your interest in creative and inclusive teaching in an urban setting","The course develops two subject specialisms — think in advance about which curriculum areas excite you and weave this into your statement","UWE values transformational teaching — show you understand the difference between delivering content and genuinely inspiring a love of learning"],
+detail:{gradYear:"2030",duration:"3 years, graduating 2030",locationFull:"Frenchay, Bristol",mapsQ:"Bristol UWE Frenchay Campus",entryReqs:"112 UCAS tariff points. GCSE English Language, Maths and Science at grade C/4 or above. DBS check and occupational health clearance required.",courseFee:"£9,790 per year",openDays:["Check uwe.ac.uk for 2025–26 open day dates"],accommodation:"Halls available on and near campus from approx £140–£200 per week.",accommodationUrl:"https://www.uwe.ac.uk/life/accommodation"}},
+
+{cugRank:43,uni:"Liverpool Hope University",course:"Early Education Primary (3–7) with QTS",campus:"Hope Park",city:"Liverpool",region:"North West",instCode:"L46",courseCode:"X121",points:"104–112",minPts:104,duration:"3 years",fee:"£9,790/yr",qual:"BA (Hons)",ofsted:false,
+ucasUrl:"https://digital.ucas.com/coursedisplay/courses/9ee60d43-e3e4-4724-9767-dc09b25b70ca",
+psTips:["This route focuses on ages 3–7 — clearly explain why the early years specifically inspire you and what you understand about child development at this crucial stage","Liverpool Hope has a strong values-led ethos rooted in its founding traditions — show respect for purpose-driven, community-centred education","Any experience with nursery, reception or EYFS settings in any context carries particular weight for the 3–7 route","The course offers opportunities to specialise from Year 2 — mention areas like communication and language, emotional health or early literacy that particularly interest you"],
+detail:{gradYear:"2030",duration:"3 years, graduating 2030",locationFull:"Liverpool, Merseyside",mapsQ:"Liverpool Hope University Hope Park",entryReqs:"104–112 UCAS tariff points from a minimum of two A-Levels. GCSE English, Maths and Science at grade C/4.",courseFee:"£9,790 per year",openDays:["Check hope.ac.uk for 2025–26 open day dates"],accommodation:"On-campus halls from approx £110–£160 per week.",accommodationUrl:"https://www.hope.ac.uk/student-life/accommodation/"}},
+
+{cugRank:44,uni:"Edge Hill University",course:"Primary Education with QTS (5–11)",campus:"Ormskirk (Main Campus)",city:"Ormskirk",region:"North West",instCode:"E42",courseCode:"0P59",points:"112–120",minPts:112,duration:"3 years",fee:"£9,790/yr",qual:"BA (Hons)",ofsted:true,
+ucasUrl:"https://www.ucas.com/explore/courses/e7241d9d-4b1a-9ec0-badd-37456f036e8c",
+psTips:["Edge Hill has a strong focus on values, social justice and community — weave these themes through your statement and show you see teaching as a social role, not just an academic one","Their Fair Entry Criteria policy means contextual factors are considered — be honest and open about your background and the journey that brought you to this point","The course includes Intensive Training and Practice (ITAP) weeks — show you're excited by concentrated, focused bursts of school-based skill development","Edge Hill's campus is consistently rated award-winning — mentioning the specific environment and community shows you've engaged with the university beyond just the course page"],
+detail:{gradYear:"2030",duration:"3 years, graduating 2030",locationFull:"Ormskirk, Lancashire",mapsQ:"Edge Hill University Ormskirk",entryReqs:"112–120 UCAS tariff points. GCSE English Language, Maths and Science at grade C/4. Ofsted Outstanding. Fair Entry Criteria policy may allow up to two-grade reduction for eligible applicants.",courseFee:"£9,790 per year",openDays:["Check edgehill.ac.uk for 2025–26 open day dates"],accommodation:"Guaranteed for first-year students on award-winning campus from approx £100–£150 per week.",accommodationUrl:"https://www.edgehill.ac.uk/student-life/accommodation/"}},
+
+{cugRank:47,uni:"York St John University",course:"Primary Education (5–11)",campus:"York St John University",city:"York",region:"Yorkshire",instCode:"Y75",courseCode:"X320",points:"96–112",minPts:96,duration:"3 years",fee:"£9,790/yr",qual:"BA (Hons)",ofsted:false,
+ucasUrl:"https://www.ucas.com/explore/courses/134bd43b-b2af-cb1c-5b59-eca6de31bbea",
+psTips:["York St John has been training teachers since 1841 — acknowledging this long history of teacher education shows you've researched the institution properly","Their most recent Ofsted report noted trainees are 'well prepared for a career in teaching' — reference your own commitment to professional readiness and being classroom-ready from day one","You choose either 5–11 or 3–7 on application — make a clear, reasoned case for the age range you've selected and back it up with experience","The course allows personalisation in the final year with optional specialisms — mention which areas interest you such as outdoor learning or subject leadership"],
+detail:{gradYear:"2030",duration:"3 years, graduating 2030",locationFull:"York, North Yorkshire",mapsQ:"York St John University",entryReqs:"96–112 UCAS tariff points. Five GCSEs at grade C/4 including English Language, Maths and Science. Interview required.",courseFee:"£9,790 per year",openDays:["Check yorksj.ac.uk for 2025–26 open day dates"],accommodation:"City-centre campus halls from approx £105–£160 per week.",accommodationUrl:"https://www.yorksj.ac.uk/student-life/accommodation/"}},
+
+{cugRank:51,uni:"Birmingham City University",course:"Primary Education with QTS",campus:"University House",city:"Birmingham",region:"Midlands",instCode:"B25",courseCode:"X120",points:"112",minPts:112,duration:"3 years",fee:"£9,790/yr",qual:"BA (Hons)",ofsted:false,
+ucasUrl:"https://www.ucas.com/explore/courses/510b1281-7fb8-1d79-1214-933fd864be4f",
+psTips:["BCU allows you to specialise in 3–7 or 5–11 — make a specific and reasoned choice in your statement and explain why that age range resonates with you","BCU genuinely values student wellbeing and achievement — mention your own resilience and support networks as teaching can be emotionally demanding","Placements are in the wider Birmingham area — show awareness of the culturally rich and diverse school communities you'd be working in","BCU also accepts Accelerate offers from 80 points — if your predicted grades are lower, strongly emphasise your school experience and personal motivation to teach"],
+detail:{gradYear:"2030",duration:"3 years, graduating 2030",locationFull:"Birmingham, West Midlands",mapsQ:"Birmingham City University University House",entryReqs:"Standard offer 112 UCAS tariff points. Accelerate offer from 80 points. GCSE English, Maths and Science at grade C/4. Interview required. Specialise in age phases 3–7 or 5–11.",courseFee:"£9,790 per year",openDays:["Check bcu.ac.uk for 2025–26 open day dates"],accommodation:"City-centre halls from approx £110–£160 per week.",accommodationUrl:"https://www.bcu.ac.uk/student-info/accommodation"}},
+
+{cugRank:59,uni:"Liverpool John Moores University",course:"Primary Education with Qualified Teacher Status (QTS)",campus:"Mount Pleasant Campus",city:"Liverpool",region:"North West",instCode:"L51",courseCode:"X120",points:"104–120",minPts:104,duration:"3 years",fee:"£9,790/yr",qual:"BA (Hons)",ofsted:false,
+ucasUrl:"https://www.ucas.com/explore/courses/d4aacb1f-04b9-cfc6-2afc-789cee37acc0",
+psTips:["LJMU has a deliberately small cohort size meaning very personalised support — mention that you value close tutor relationships and a tight-knit, supportive learning community","100% of LJMU graduates go into work or further study within 15 months — demonstrate your longer-term career thinking and why teaching is a firm, considered commitment","The course offers enrichment certificates including Forest School Level 1, FA coaching and P4C — show enthusiasm for going beyond the minimum standard curriculum","LJMU's Home School placement model means deep immersion in one school — show you understand the professional value of knowing a school community well"],
+detail:{gradYear:"2030",duration:"3 years, graduating 2030",locationFull:"Liverpool, Merseyside",mapsQ:"Liverpool John Moores University Mount Pleasant",entryReqs:"104–120 UCAS tariff points. GCSE English, Maths and Science at grade C/4. Applicants must be aged 18 by 1 September of entry year. Interview required.",courseFee:"£9,790 per year",openDays:["Check ljmu.ac.uk for 2025–26 open day dates"],accommodation:"City-centre halls from approx £115–£165 per week.",accommodationUrl:"https://www.ljmu.ac.uk/study/student-accommodation"}},
+
+{cugRank:61,uni:"Bath Spa University",course:"Primary Education (5–11) with QTS",campus:"Newton Park",city:"Bath",region:"South West",instCode:"B20",courseCode:"X120",points:"112",minPts:112,duration:"3 years",fee:"£9,790/yr",qual:"BA (Hons)",ofsted:false,
+ucasUrl:"https://digital.ucas.com/coursedisplay/courses/a0be3770-a59e-4611-868e-d664ca206750",
+psTips:["Bath Spa co-creates and co-delivers this course with 400 local schools — show you understand and are genuinely excited about this practitioner-academic collaboration","You develop two subject specialisms during the course — think carefully about which core and foundation subjects excite you most and weave them into your statement","Newton Park campus is set in beautiful countryside with outdoor facilities — mention how the rural and outdoor learning environment shapes your interest in creative pedagogies","Bath Spa emphasises creative and reflective practice — show you are a thoughtful, curious learner as much as someone who is ready to teach"],
+detail:{gradYear:"2030",duration:"3 years, graduating 2030",locationFull:"Bath, Somerset",mapsQ:"Bath Spa University Newton Park",entryReqs:"112 UCAS tariff points (BBB–BBC at A-Level). GCSE English, Maths and Science at grade C/4. School placements from Year 1. Develop two subject specialisms.",courseFee:"£9,790 per year",openDays:["Check bathspa.ac.uk for 2025–26 open day dates"],accommodation:"First-year accommodation on Newton Park campus from approx £115–£160 per week.",accommodationUrl:"https://www.bathspa.ac.uk/student-life/accommodation/"}},
+
+{cugRank:65,uni:"University of Worcester",course:"Primary Teaching with QTS (5–11)",campus:"City Campus",city:"Worcester",region:"Midlands",instCode:"W80",courseCode:"X120",points:"96–112",minPts:96,duration:"3 years",fee:"£9,790/yr",qual:"BA (Hons)",ofsted:true,
+ucasUrl:"https://digital.ucas.com/coursedisplay/courses/2745523d-0510-612b-a8ed-80fc8c6417e1",
+psTips:["Worcester is Ofsted Outstanding 2023 and ranked first in the UK for graduate employment — mention both and explain why outcomes and standards matter to you","Each year includes a 'Developing Self' wellbeing module — show emotional intelligence and genuine self-awareness, as teaching is as much about who you are as what you know","Worcester works with over 200 schools across the region — demonstrate enthusiasm for varied placements across different school types and community contexts","Small class sizes mean close tutor relationships — mention that you value personalised academic support and mentoring as key to your development as a teacher"],
+detail:{gradYear:"2030",duration:"3 years, graduating 2030",locationFull:"Worcester, Worcestershire",mapsQ:"University of Worcester City Campus",entryReqs:"96–112 UCAS tariff points. GCSE English, Maths and Science at grade C/4. Ofsted Outstanding 2023. First in UK for graduate employment (LEO data 2024).",courseFee:"£9,790 per year",openDays:["Check worcester.ac.uk for 2025–26 open day dates"],accommodation:"Accommodation guarantee for first-year students. On-campus options from approx £100–£155 per week.",accommodationUrl:"https://www.worcester.ac.uk/student-life/accommodation/"}},
+
+{cugRank:69,uni:"Leeds Trinity University",course:"Primary Education (Later Years 5–11) with QTS",campus:"Horsforth Campus",city:"Leeds",region:"Yorkshire",instCode:"L24",courseCode:"X122",points:"96–112",minPts:96,duration:"3 years",fee:"£9,790/yr",qual:"BA (Hons)",ofsted:false,
+ucasUrl:"https://www.ucas.com/explore/courses/f6005e0c-4877-4893-ad57-a645a65e0549",
+psTips:["Leeds Trinity's curriculum is structured around four strands: Subject Knowledge, Professional Studies, Research Literacy and School Experience — reference how you plan to engage with all four dimensions","This route focuses on ages 5–11 — explain clearly why KS1 and KS2 inspire you and give a specific example from your own experience if you can","The course includes over 26 weeks of assessed school experience — show genuine readiness for and excitement about extended time in real classrooms","Leeds Trinity has a warm, community feel on a compact campus — mention that you value a supportive, smaller university environment over a large anonymous institution"],
+detail:{gradYear:"2030",duration:"3 years, graduating 2030",locationFull:"Horsforth, Leeds",mapsQ:"Leeds Trinity University Horsforth",entryReqs:"96–112 UCAS tariff points. GCSE English Language/Literature, Maths and Science at grade C/4. Minimum 26 weeks assessed school experience across three years.",courseFee:"£9,790 per year",openDays:["Check leedstrinity.ac.uk for 2025–26 open day dates"],accommodation:"On-campus halls from approx £100–£150 per week.",accommodationUrl:"https://www.leedstrinity.ac.uk/student-life/accommodation/"}},
+
+{cugRank:69,uni:"Leeds Trinity University",course:"Primary Education (Early Years 3–7) with QTS",campus:"Horsforth Campus",city:"Leeds",region:"Yorkshire",instCode:"L24",courseCode:"X120",points:"96–112",minPts:96,duration:"3 years",fee:"£9,790/yr",qual:"BA (Hons)",ofsted:false,
+ucasUrl:"https://digital.ucas.com/coursedisplay/courses/0dc05596-6b47-6575-3ed5-a563ea935223",
+psTips:["This Early Years route covers 3–7 year olds — articulate clearly why the prime areas of learning (communication, personal and social development, physical development) matter so deeply at this stage","Reference the EYFS statutory framework to show you already understand the curriculum framework underpinning this age group","Leeds Trinity values professional identity development from day one — show that you've already started thinking seriously about the teacher you want to become","Any experience with under-7s in any setting — nursery, childminding, sports clubs, faith groups, family care — is valuable and absolutely worth including"],
+detail:{gradYear:"2030",duration:"3 years, graduating 2030",locationFull:"Horsforth, Leeds",mapsQ:"Leeds Trinity University Horsforth",entryReqs:"96–112 UCAS tariff points. GCSE English Language/Literature, Maths and Science at grade C/4. Specialises in Early Years Foundation Stage and Key Stage 1.",courseFee:"£9,790 per year",openDays:["Check leedstrinity.ac.uk for 2025–26 open day dates"],accommodation:"On-campus halls from approx £100–£150 per week.",accommodationUrl:"https://www.leedstrinity.ac.uk/student-life/accommodation/"}},
+
+{cugRank:72,uni:"Leeds Beckett University",course:"Primary Education (5–11) with QTS",campus:"Headingley Campus",city:"Leeds",region:"Yorkshire",instCode:"L27",courseCode:"X125",points:"120",minPts:120,duration:"3 years",fee:"£9,790/yr",qual:"BA (Hons)",ofsted:false,
+ucasUrl:"https://digital.ucas.com/coursedisplay/courses/69c75f3b-0d2d-43b3-98f1-a1600bceff5e",
+psTips:["Leeds Beckett has no formal exams — entirely coursework and creative assessments — specifically mention that you thrive with continuous, reflective assessment rather than high-stakes examinations","Carnegie School of Education is newly refurbished and purpose-built — showing you have looked into the facilities demonstrates genuine engagement beyond the UCAS listing","Forest School training is offered on campus — if you have any interest in outdoor or nature-based education, this is the place to mention it prominently","Headingley is a vibrant, affordable student area of Leeds — showing you've thought about the practical realities of student life demonstrates real maturity and readiness"],
+detail:{gradYear:"2030",duration:"3 years, graduating 2030",locationFull:"Headingley, Leeds",mapsQ:"Leeds Beckett University Headingley Campus",entryReqs:"120 UCAS tariff points (minimum 80 from two A-Levels). GCSE English Language, Maths, Science and two other subjects at grade C/4. Interview required.",courseFee:"£9,790 per year",openDays:["Check leedsbeckett.ac.uk for 2025–26 open day dates"],accommodation:"Halls available across Leeds from approx £115–£170 per week.",accommodationUrl:"https://www.leedsbeckett.ac.uk/student-life/accommodation/"}},
+
+{cugRank:73,uni:"University of Wolverhampton",course:"Primary Education",campus:"Main Site",city:"Wolverhampton",region:"Midlands",instCode:"W67",courseCode:"X120",points:"96",minPts:96,duration:"3 years",fee:"£9,790/yr",qual:"BA (Hons)",ofsted:false,
+ucasUrl:"https://digital.ucas.com/coursedisplay/courses",
+psTips:["Wolverhampton explicitly requires high standards of written accuracy in personal statements as a signal of professional standards — proofread your statement extremely carefully and ask a teacher or parent to review it","95% student satisfaction means this is a course where students feel genuinely supported — mention that you value a nurturing, accessible teaching community","Wolverhampton serves a diverse West Midlands community — show strong awareness of the communities you'd be teaching in and your personal commitment to equity and inclusion","The course has an extensive placement network — demonstrate that you're eager to spend time in real classrooms from the very earliest stages of training"],
+detail:{gradYear:"2030",duration:"3 years, graduating 2030",locationFull:"Wolverhampton, West Midlands",mapsQ:"University of Wolverhampton",entryReqs:"96 UCAS tariff points. GCSE English, Maths and Science at grade C/4. High standards of accuracy required in personal statement.",courseFee:"£9,790 per year",openDays:["Check wlv.ac.uk for 2025–26 open day dates"],accommodation:"City-centre and campus halls from approx £105–£155 per week.",accommodationUrl:"https://www.wlv.ac.uk/student-life/accommodation/"}},
+
+{cugRank:77,uni:"University of Sunderland",course:"Primary Education with QTS",campus:"Sir Tom Cowie Campus",city:"Sunderland",region:"North East",instCode:"S75",courseCode:"X120",points:"104–120",minPts:104,duration:"3 years",fee:"£9,790/yr",qual:"BA (Hons)",ofsted:false,
+ucasUrl:"https://digital.ucas.com/coursedisplay/courses/e37910fe-6fa1-d5d1-d680-2d1afcbfea26",
+psTips:["Sunderland awards 70 credits to school placements — making it one of the most practice-intensive undergraduate routes. Emphasise that you want maximum classroom time","The North East has some of the most committed and community-rooted school cultures in England — show genuine enthusiasm for teaching in this specific region","Sunderland is a modern, student-focused university with accessible, dedicated staff — mention your appreciation for approachable tutors and strong pastoral support","The course qualifies you to teach the full primary curriculum — show breadth of interest across subjects including the foundation subjects, not just core English and maths"],
+detail:{gradYear:"2030",duration:"3 years, graduating 2030",locationFull:"Sunderland, Tyne and Wear",mapsQ:"University of Sunderland Sir Tom Cowie Campus",entryReqs:"104–120 UCAS tariff points. GCSE English Language, Maths and Science at grade C/4. Teaching placements account for 70 credits.",courseFee:"£9,790 per year",openDays:["Check sunderland.ac.uk for 2025–26 open day dates"],accommodation:"On-campus halls from approx £100–£150 per week.",accommodationUrl:"https://www.sunderland.ac.uk/student-life/accommodation/"}},
+
+{cugRank:81,uni:"Middlesex University",course:"Primary Education (QTS)",campus:"Hendon Campus",city:"London",region:"London",instCode:"M99",courseCode:"X120",points:"112",minPts:112,duration:"3 years",fee:"£9,790/yr",qual:"BA (Hons)",ofsted:false,
+ucasUrl:"https://digital.ucas.com/coursedisplay/courses/0a4f9c14-bb4c-ae3f-c0f7-16be2aa76a90",
+psTips:["Middlesex has a deep focus on diversity, multilingualism and EAL — if you have personal experience of more than one language or culture, highlight this as a significant professional strength","North London's schools serve some of the most culturally rich and multilingual communities in the UK — show this as an exciting professional opportunity rather than a challenge","Middlesex values inclusive, student-centred pedagogy — reference specific examples from your experience of supporting learners with different needs and backgrounds","The Hendon campus has excellent transport links across London — mention your adaptability and readiness to work in varied placement schools across the capital"],
+detail:{gradYear:"2030",duration:"3 years, graduating 2030",locationFull:"Hendon, North London",mapsQ:"Middlesex University Hendon London",entryReqs:"112 UCAS tariff points. GCSE English Language, Maths and Science at grade C/4. Interview required. Strong focus on diversity, inclusion and multilingualism.",courseFee:"£9,790 per year",openDays:["Check mdx.ac.uk for 2025–26 open day dates"],accommodation:"On-campus and nearby accommodation from approx £145–£205 per week.",accommodationUrl:"https://www.mdx.ac.uk/life/student-accommodation"}},
+
+{cugRank:83,uni:"Canterbury Christ Church University",course:"Primary Education (QTS)",campus:"Main Site",city:"Canterbury",region:"South East",instCode:"C10",courseCode:"X122",points:"112",minPts:112,duration:"3 years",fee:"£9,535/yr",qual:"BA (Hons)",ofsted:false,
+ucasUrl:"https://digital.ucas.com/coursedisplay/courses/fa2b6dc8-3268-6ccd-14a2-34464c29cbd7",
+psTips:["Canterbury Christ Church was literally founded as a teacher training college 60 years ago — teaching is their core identity. Show you've chosen them for that specialism, not as an afterthought","They are the only undergraduate teacher training provider in Kent — emphasise the exceptional regional school network and placement opportunities this exclusivity creates","98% of graduates in employment or further study within 15 months — demonstrate career focus and make clear that teaching is a firm, considered commitment, not a tentative option","Canterbury is a UNESCO World Heritage Site with a remarkable history — show you're genuinely excited about studying in this unique, culturally rich city"],
+detail:{gradYear:"2030",duration:"3 years, graduating 2030",locationFull:"Canterbury, Kent",mapsQ:"Canterbury Christ Church University",entryReqs:"112 UCAS tariff points (BBC at A-Level). GCSE English Language, Maths and Science at grade C/4. Only undergraduate teacher training provider in Kent.",courseFee:"£9,535 per year",openDays:["Check canterbury.ac.uk for 2025–26 open day dates"],accommodation:"Halls available in the historic city from approx £100–£155 per week.",accommodationUrl:"https://www.canterbury.ac.uk/student-life/accommodation/"}},
+
+{cugRank:84,uni:"University of East London",course:"Primary Education with QTS",campus:"Stratford Campus",city:"London",region:"London",instCode:"E28",courseCode:"X120",points:"80–96",minPts:80,duration:"3 years",fee:"£9,790/yr",qual:"BA (Hons)",ofsted:false,
+ucasUrl:"https://www.ucas.com/explore/courses/be6ea8d3-4469-45ff-bfd3-d022968445be",
+psTips:["UEL is genuinely proud of its inclusive admissions — it actively welcomes mature students, those with non-traditional qualifications and those from under-represented backgrounds. Be honest and open about your journey","Stratford and east London have some of the most diverse school communities in the country — show real enthusiasm for multilingual, multicultural, vibrant urban classrooms","The course includes a final-year research dissertation — show intellectual curiosity and a genuine interest in education research alongside your practical teaching ambitions","UEL frames education through students' rights and social justice — weaving these themes through your statement will resonate strongly with their admissions tutors"  ],
+detail:{gradYear:"2030",duration:"3 years, graduating 2030",locationFull:"Stratford, East London",mapsQ:"University of East London Stratford",entryReqs:"80–96 UCAS tariff points. GCSE English Language, Maths and Science at grade C/4. Contextual offer scheme available.",courseFee:"£9,790 per year",openDays:["Check uel.ac.uk for 2025–26 open day dates"],accommodation:"Modern on-campus halls in Stratford from approx £155–£215 per week.",accommodationUrl:"https://www.uel.ac.uk/life/accommodation"}}
 ];
+
+const ALEVEL={"A*":56,"A":48,"B":40,"C":32,"D":24,"E":16};
+const BTEC={"D*D*D*":168,"D*D*D":160,"D*DD":152,"DDD":144,"DDM":128,"DMM":112,"MMM":96,"MMP":80,"MPP":64,"PPP":48};
+const ACCESS={"Distinction (all 45 credits at L3)":144,"Merit (all 45 credits at L3)":96,"Pass (all 45 credits at L3)":48};
 
 const ROUTES=["All Routes","BA (Hons)"];
 const REGIONS=["All Regions","London","North West","North East","Yorkshire","Midlands","South East","South West"];
-
 let aRoute="All Routes",aRegion="All Regions",searchQ="",theme="dark";
-let shortlist=[],curList=[],curIdx=null;
+let shortlist=[],compareList=[],curList=[],curIdx=null;
+let calcOpen=false,userPts=null;
+const courseNotes={};
 
 const tbtn=document.getElementById("tbtn");
 const si=document.getElementById("si");
@@ -584,9 +455,10 @@ const fbar=document.getElementById("fbar");
 const ov=document.getElementById("ov");
 const mx=document.getElementById("mx");
 const msl=document.getElementById("msl");
+const mcmp=document.getElementById("mcmp");
 const mb=document.getElementById("mb");
 const mu=document.getElementById("mu");
-const mc=document.getElementById("mc");
+const mc_el=document.getElementById("mc");
 const mrn=document.getElementById("mrn");
 const ptitle=document.getElementById("ptitle");
 const pcount=document.getElementById("pcount");
@@ -597,6 +469,16 @@ const slOv=document.getElementById("slOv");
 const slBody=document.getElementById("slBody");
 const slbtn2=document.getElementById("slbtn2");
 const slClose=document.getElementById("slClose");
+const cmpOv=document.getElementById("cmpOv");
+const cmpBody=document.getElementById("cmpBody");
+const cmpClose=document.getElementById("cmpClose");
+const cmpBarBtn=document.getElementById("cmpBarBtn");
+const cmpBarTxt=document.getElementById("cmpBarTxt");
+const cmpbtn2=document.getElementById("cmpbtn2");
+const calcBody=document.getElementById("calcBody");
+const calcGrid=document.getElementById("calcGrid");
+const calcResult=document.getElementById("calcResult");
+const calcToggleTxt=document.getElementById("calcToggleTxt");
 
 tbtn.addEventListener("click",()=>{
   theme=theme==="dark"?"light":"dark";
@@ -613,42 +495,130 @@ si.addEventListener("input",()=>{
 });
 cb.addEventListener("click",()=>{si.value="";searchQ="";cb.classList.remove("v");render();});
 
-mx.addEventListener("click",()=>ov.classList.remove("open"));
-ov.addEventListener("click",e=>{if(e.target===ov)ov.classList.remove("open");});
-document.addEventListener("keydown",e=>{if(e.key==="Escape"){ov.classList.remove("open");slOv.classList.remove("open");}});
+mx.addEventListener("click",()=>{savePendingNote();ov.classList.remove("open");});
+ov.addEventListener("click",e=>{if(e.target===ov){savePendingNote();ov.classList.remove("open");}});
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape"){savePendingNote();ov.classList.remove("open");slOv.classList.remove("open");cmpOv.classList.remove("open");}
+});
 slBar.addEventListener("click",e=>{if(e.target!==slBarX)openSL();});
 slBarX.addEventListener("click",e=>{e.stopPropagation();slBar.classList.remove("show");});
 slbtn2.addEventListener("click",openSL);
 slClose.addEventListener("click",()=>slOv.classList.remove("open"));
 slOv.addEventListener("click",e=>{if(e.target===slOv)slOv.classList.remove("open");});
+cmpClose.addEventListener("click",()=>cmpOv.classList.remove("open"));
+cmpOv.addEventListener("click",e=>{if(e.target===cmpOv)cmpOv.classList.remove("open");});
+cmpBarBtn.addEventListener("click",openCmp);
+cmpbtn2.addEventListener("click",openCmp);
 
 msl.addEventListener("click",()=>{
   if(curIdx===null)return;
-  const u=curList[curIdx];
-  const k=u.instCode+u.courseCode;
-  toggleSL(k,u);
-  updateSLBtn(k);
-  updateBar();
+  const u=curList[curIdx];const k=u.instCode+u.courseCode;
+  toggleSL(k,u);updateSLBtn(k);updateBar();
 });
+mcmp.addEventListener("click",()=>{
+  if(curIdx===null)return;
+  const u=curList[curIdx];const k=u.instCode+u.courseCode;
+  toggleCmp(k,u);updateCmpBtn(k);updateCmpBar();
+});
+
+(function(){
+  const deadline=new Date("2027-01-13");
+  const diff=Math.ceil((deadline-new Date())/(1000*60*60*24));
+  const el=document.getElementById("daysLeft");
+  if(el) el.textContent=diff>0?diff:"Passed";
+})();
+
+function toggleCalc(){
+  calcOpen=!calcOpen;
+  calcBody.classList.toggle("open",calcOpen);
+  calcToggleTxt.textContent=calcOpen?"▲ Close":"▼ Open";
+  if(calcOpen&&!calcGrid.children.length)buildCalc();
+}
+function buildCalc(){
+  const alOpts=Object.keys(ALEVEL).map(g=>`<option>${g}</option>`).join("");
+  calcGrid.innerHTML=`
+    <div class="calc-row" style="grid-column:1/-1">
+      <label class="calc-label">Qualification type</label>
+      <select class="calc-sel" id="qtype" onchange="onQTypeChange()">
+        <option value="">Choose…</option><option>A-Levels</option><option>BTEC</option><option>Access to HE</option>
+      </select>
+    </div>
+    <div class="calc-row" id="al1row" style="display:none">
+      <label class="calc-label">A-Level 1</label>
+      <select class="calc-sel" id="al1" onchange="calcPts()"><option value="">—</option>${alOpts}</select>
+    </div>
+    <div class="calc-row" id="al2row" style="display:none">
+      <label class="calc-label">A-Level 2</label>
+      <select class="calc-sel" id="al2" onchange="calcPts()"><option value="">—</option>${alOpts}</select>
+    </div>
+    <div class="calc-row" id="al3row" style="display:none">
+      <label class="calc-label">A-Level 3 (optional)</label>
+      <select class="calc-sel" id="al3" onchange="calcPts()"><option value="">—</option>${alOpts}</select>
+    </div>
+    <div class="calc-row" id="btecrow" style="display:none;grid-column:1/-1">
+      <label class="calc-label">BTEC Extended Diploma</label>
+      <select class="calc-sel" id="btecg" onchange="calcPts()"><option value="">—</option>${Object.keys(BTEC).map(g=>`<option>${g}</option>`).join("")}</select>
+    </div>
+    <div class="calc-row" id="accrow" style="display:none;grid-column:1/-1">
+      <label class="calc-label">Access to HE result</label>
+      <select class="calc-sel" id="accg" onchange="calcPts()"><option value="">—</option>${Object.keys(ACCESS).map(g=>`<option>${g}</option>`).join("")}</select>
+    </div>`;
+}
+function onQTypeChange(){
+  const t=document.getElementById("qtype").value;
+  const show=(id,v)=>{const el=document.getElementById(id);if(el)el.style.display=v?"":"none";};
+  show("al1row",t==="A-Levels");show("al2row",t==="A-Levels");show("al3row",t==="A-Levels");
+  show("btecrow",t==="BTEC");show("accrow",t==="Access to HE");
+  calcPts();
+}
+function calcPts(){
+  const t=document.getElementById("qtype")&&document.getElementById("qtype").value;
+  let pts=0;
+  if(t==="A-Levels"){
+    const g=v=>document.getElementById(v)&&document.getElementById(v).value;
+    if(g("al1"))pts+=ALEVEL[g("al1")]||0;
+    if(g("al2"))pts+=ALEVEL[g("al2")]||0;
+    if(g("al3"))pts+=ALEVEL[g("al3")]||0;
+  } else if(t==="BTEC"){
+    const g=document.getElementById("btecg")&&document.getElementById("btecg").value;
+    pts=BTEC[g]||0;
+  } else if(t==="Access to HE"){
+    const g=document.getElementById("accg")&&document.getElementById("accg").value;
+    pts=ACCESS[g]||0;
+  }
+  if(!t){userPts=null;calcResult.classList.remove("has-result");calcResult.innerHTML=`<span style="color:var(--muted);font-size:.8rem">Choose a qualification type above ✏️</span>`;render();return;}
+  userPts=pts;
+  const eligible=ALL.filter(u=>u.minPts!==null&&pts>=u.minPts).length;
+  const close=ALL.filter(u=>u.minPts!==null&&pts>=u.minPts-16&&pts<u.minPts).length;
+  calcResult.classList.add("has-result");
+  calcResult.innerHTML=`<div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.4rem"><span class="pts-total">${pts} pts</span><span style="font-size:.78rem;color:var(--tx2)">estimated total</span></div>
+    <div style="font-size:.8rem;color:var(--tx2)"><span style="color:var(--green);font-weight:700">✓ ${eligible} course${eligible!==1?"s":""} you meet the entry requirement for</span>
+    ${close>0?`<br><span style="color:var(--amber)">⚡ ${close} course${close!==1?"s":""} just within reach (within 16 pts)</span>`:""}
+    ${eligible===0&&close===0?`<br><span style="color:var(--cor)">Consider Access to HE, retakes or contacting admissions directly</span>`:""}</div>`;
+  render();
+}
+function meetsReq(u){
+  if(userPts===null)return null;
+  if(u.minPts===null)return null;
+  if(userPts>=u.minPts)return "eligible";
+  if(userPts>=u.minPts-16)return "close";
+  return "no";
+}
 
 function buildFilters(){
   fbar.innerHTML="";
   ROUTES.forEach(r=>{
     const b=document.createElement("button");
-    b.className="chip"+(aRoute===r?" on":"");
-    b.textContent=r;
-    b.onclick=()=>{aRoute=r;buildFilters();render();};
-    fbar.appendChild(b);
+    b.className="chip"+(aRoute===r?" on":"");b.textContent=r;
+    b.onclick=()=>{aRoute=r;buildFilters();render();};fbar.appendChild(b);
   });
   const sep=document.createElement("span");
   sep.style.cssText="width:1px;background:rgba(168,85,247,.2);margin:2px 3px;border-radius:1px;display:inline-block";
   fbar.appendChild(sep);
   REGIONS.forEach(r=>{
     const b=document.createElement("button");
-    b.className="chip"+(aRegion===r?" on":"");
-    b.textContent=r;
-    b.onclick=()=>{aRegion=r;buildFilters();render();};
-    fbar.appendChild(b);
+    b.className="chip"+(aRegion===r?" on":"");b.textContent=r;
+    b.onclick=()=>{aRegion=r;buildFilters();render();};fbar.appendChild(b);
   });
 }
 
@@ -657,41 +627,38 @@ function filtered(){
     const mR=aRoute==="All Routes"||(u.qual||"").includes(aRoute.replace(" (Hons)",""));
     const mG=aRegion==="All Regions"||u.region===aRegion;
     const q=searchQ.toLowerCase();
-    const mS=!q||
-      u.uni.toLowerCase().includes(q)||
-      u.course.toLowerCase().includes(q)||
-      u.city.toLowerCase().includes(q)||
-      u.region.toLowerCase().includes(q)||
-      u.courseCode.toLowerCase().includes(q)||
-      u.instCode.toLowerCase().includes(q)||
+    const mS=!q||u.uni.toLowerCase().includes(q)||u.course.toLowerCase().includes(q)||
+      u.city.toLowerCase().includes(q)||u.region.toLowerCase().includes(q)||
+      u.courseCode.toLowerCase().includes(q)||u.instCode.toLowerCase().includes(q)||
       (u.campus||"").toLowerCase().includes(q);
     return mR&&mG&&mS;
   }).sort((a,b)=>a.cugRank-b.cugRank);
 }
 
 function render(){
-  const res=filtered();
-  curList=res;
+  const res=filtered();curList=res;
   const isF=aRoute!=="All Routes"||aRegion!=="All Regions"||searchQ;
   ptitle.textContent=searchQ?`Results for "${searchQ}"`:(isF?"Filtered Courses":"All Courses");
   pcount.textContent=res.length+" course"+(res.length!==1?"s":"");
-  if(!res.length){
-    cw.innerHTML=`<div class="empty"><span class="empty-ic">🔍</span><p>No courses match. Try adjusting filters or search terms.</p></div>`;
-    return;
-  }
+  if(!res.length){cw.innerHTML=`<div class="empty"><span class="empty-ic">🔍</span><p>No courses match. Try adjusting your filters or search.</p></div>`;return;}
   cw.innerHTML=res.map((u,i)=>{
     const k=u.instCode+u.courseCode;
     const saved=shortlist.some(s=>s.key===k);
+    const inCmp=compareList.some(s=>s.key===k);
     const ntu=u.duration==="4 years";
-    return `<div class="card" onclick="openM(${i})" tabindex="0" role="button" aria-label="${u.uni} - ${u.course}" onkeydown="if(event.key==='Enter')openM(${i})">
+    const req=meetsReq(u);
+    let cc="card";
+    if(userPts!==null&&u.minPts!==null){if(req==="eligible")cc+=" eligible";else if(req==="no")cc+=" dim";}
+    const hasNote=courseNotes[k]&&courseNotes[k].trim();
+    return `<div class="${cc}" onclick="openM(${i})" tabindex="0" role="button" aria-label="${u.uni} - ${u.course}" onkeydown="if(event.key==='Enter')openM(${i})">
       <div class="c-accent"></div>
       <div class="ch">
         <div class="rb"><span class="rn">#${u.cugRank}</span><span class="rl">CUG</span></div>
-        <div class="ci">
-          <div class="un">${u.uni}</div>
-          <div class="cn">${u.course}</div>
+        <div class="ci"><div class="un">${u.uni}</div><div class="cn">${u.course}</div></div>
+        <div class="card-actions">
+          <button class="cmpbtn ${inCmp?"in-cmp":""}" onclick="event.stopPropagation();toggleCmpCard('${k.replace(/'/g,"\\'")}',${i})" title="${inCmp?"Remove from compare":"Add to compare"}">⚖️</button>
+          <button class="slbtn ${saved?"saved":""}" onclick="event.stopPropagation();toggleCard('${k.replace(/'/g,"\\'")}',${i})" title="${saved?"Remove":"Save"}">${saved?"★":"☆"}</button>
         </div>
-        <button class="slbtn ${saved?"saved":""}" onclick="event.stopPropagation();toggleCard('${k.replace(/'/g,"\\'")}',${ i})" title="${saved?"Remove":"Save"}">${saved?"★":"☆"}</button>
         <span class="cv">›</span>
       </div>
       <div class="cf">
@@ -699,105 +666,187 @@ function render(){
         <span class="tag t-dur">⏱ ${u.duration}${ntu?" ⚠️":""}</span>
         <span class="tag t-fee">💷 ${u.fee}</span>
         <span class="tag t-ba">${u.instCode} / ${u.courseCode}</span>
-        ${ntu?'<span class="tag t-ntu">4-yr course</span>':''}
+        ${ntu?'<span class="tag t-ntu">4-yr course</span>':""}
+        ${u.ofsted?'<span class="tag t-ofsted">⭐ Ofsted Outstanding</span>':""}
+        ${req==="eligible"?'<span class="tag t-elig">✓ You qualify</span>':""}
+        ${req==="close"?'<span class="tag t-close">⚡ Just in reach</span>':""}
+        ${hasNote?'<span class="tag" style="background:rgba(34,211,238,.1);color:var(--cyan);border:1px solid rgba(34,211,238,.25)">📝 Has note</span>':""}
       </div>
     </div>`;
   }).join("");
 }
 
-function toggleCard(k,idx){
-  const u=curList[idx];
-  toggleSL(k,u);
-  render();
-  updateBar();
-}
-
+function toggleCard(k,idx){const u=curList[idx];toggleSL(k,u);render();updateBar();}
 function toggleSL(k,u){
   const i=shortlist.findIndex(s=>s.key===k);
   if(i>-1)shortlist.splice(i,1);
-  else shortlist.push({key:k,uni:u.uni,course:u.course,cugRank:u.cugRank});
+  else shortlist.push({key:k,uni:u.uni,course:u.course,cugRank:u.cugRank,city:u.city,points:u.points,fee:u.fee,instCode:u.instCode,courseCode:u.courseCode});
 }
-
-function updateSLBtn(k){
-  const saved=shortlist.some(s=>s.key===k);
-  msl.classList.toggle("saved",saved);
-  msl.textContent=saved?"★":"⭐";
-}
-
+function updateSLBtn(k){const s=shortlist.some(x=>x.key===k);msl.classList.toggle("saved",s);msl.textContent=s?"★":"⭐";}
 function updateBar(){
   if(!shortlist.length){slBar.classList.remove("show");return;}
   slBarTxt.textContent=shortlist.length+" course"+(shortlist.length!==1?"s":"")+" saved";
   slBar.classList.add("show");
 }
-
 function openSL(){
-  if(!shortlist.length){
-    slBody.innerHTML=`<div class="sl-empty">No courses saved yet.<br>Tap ☆ on any card to shortlist it! ⭐</div>`;
-  }else{
-    slBody.innerHTML=shortlist.map((s,i)=>`
-      <div class="sl-item">
-        <div style="flex:1;min-width:0">
-          <div class="sl-nm">#${s.cugRank} ${s.uni}</div>
-          <div class="sl-cs">${s.course}</div>
-        </div>
-        <button class="sl-rm" onclick="rmSL(${i})" title="Remove">✕</button>
-      </div>`).join("");
+  if(!shortlist.length){slBody.innerHTML=`<div class="sl-empty">No courses saved yet.<br>Tap ☆ on any card to shortlist it! ⭐</div>`;}
+  else{
+    const s=[...shortlist].sort((a,b)=>a.cugRank-b.cugRank);
+    slBody.innerHTML=`<p style="font-size:.78rem;color:var(--tx2);margin-bottom:.75rem;line-height:1.6">Your saved courses, ranked best to worst by CUG Education Subject League Table rank.</p>`+
+    s.map((x,i)=>`<div class="sl-item">
+      <div style="min-width:36px;height:36px;border-radius:8px;background:var(--goldbg);border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <span style="font-family:'Syne',sans-serif;font-size:.8rem;font-weight:800;color:var(--gold)">#${x.cugRank}</span></div>
+      <div style="flex:1;min-width:0"><div class="sl-nm">${x.uni}</div><div class="sl-cs">${x.course}</div>
+        <div style="font-size:.68rem;color:var(--muted);margin-top:2px">📍 ${x.city} · ${x.points} pts · ${x.instCode}/${x.courseCode}</div></div>
+      <button class="sl-rm" onclick="rmSL(${i})" title="Remove">✕</button></div>`).join("");
   }
   slOv.classList.add("open");
 }
-
 function rmSL(i){
-  shortlist.splice(i,1);
-  updateBar();
-  openSL();
+  const s=[...shortlist].sort((a,b)=>a.cugRank-b.cugRank);
+  const key=s[i].key;shortlist=shortlist.filter(x=>x.key!==key);
+  updateBar();openSL();render();
+}
+
+function printShortlist(){
+  if(!shortlist.length){alert("Add some courses to your shortlist first!");return;}
+  const s=[...shortlist].sort((a,b)=>a.cugRank-b.cugRank);
+  const win=window.open("","_blank");
+  win.document.write(`<!DOCTYPE html><html><head><title>Matilda's Shortlist</title>
+  <style>body{font-family:Georgia,serif;max-width:720px;margin:40px auto;color:#111;font-size:11pt}
+  h1{font-size:18pt;margin-bottom:4px}h2{font-size:10pt;color:#666;font-weight:normal;margin:0 0 24px}
+  table{width:100%;border-collapse:collapse;margin-top:8px}
+  th{background:#f5f0ff;padding:8px 10px;text-align:left;font-size:9pt;border:1px solid #d0c8e8}
+  td{padding:8px 10px;font-size:10pt;border:1px solid #e0d8f0;vertical-align:top}
+  .rk{color:#7c3aed;font-weight:bold;font-size:12pt}.ft{margin-top:28px;font-size:8pt;color:#999;border-top:1px solid #eee;padding-top:8px}
+  </style></head><body>
+  <h1>🎓 Matilda's Primary Ed QTS Shortlist</h1>
+  <h2>September 2027 entry · UCAS verified · Generated ${new Date().toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"})}</h2>
+  <table><thead><tr><th>CUG Rank</th><th>University</th><th>Course</th><th>City</th><th>Entry Points</th><th>Annual Fee</th><th>UCAS Codes</th></tr></thead><tbody>
+  ${s.map(x=>`<tr><td class="rk">#${x.cugRank}</td><td><strong>${x.uni}</strong></td><td>${x.course}</td><td>${x.city}</td><td>${x.points}</td><td>${x.fee}</td><td>${x.instCode} / ${x.courseCode}</td></tr>`).join("")}
+  </tbody></table>
+  <div class="ft">All UCAS codes verified from ucas.com. Always confirm details with each university before applying. CUG = Complete University Guide Education Subject League Table.</div>
+  </body></html>`);
+  win.document.close();setTimeout(()=>win.print(),400);
+}
+
+function toggleCmpCard(k,idx){const u=curList[idx];toggleCmp(k,u);render();updateCmpBar();}
+function toggleCmp(k,u){
+  const i=compareList.findIndex(s=>s.key===k);
+  if(i>-1)compareList.splice(i,1);
+  else if(compareList.length<3)compareList.push({key:k,...u});
+  else alert("You can compare up to 3 courses at once. Remove one first.");
+}
+function updateCmpBtn(k){const inC=compareList.some(s=>s.key===k);mcmp.classList.toggle("in-cmp",inC);mcmp.textContent=inC?"⊖":"⚖️";}
+function updateCmpBar(){
+  if(!compareList.length){cmpBarBtn.style.display="none";return;}
+  cmpBarBtn.style.display="flex";cmpBarBtn.classList.toggle("show",compareList.length>0);
+  cmpBarTxt.textContent="Compare "+compareList.length;
+}
+function openCmp(){
+  if(!compareList.length){cmpBody.innerHTML=`<div class="cmp-empty">Tap ⚖️ on any course card to add it to your comparison.<br>You can compare up to 3 courses side by side.</div>`;cmpOv.classList.add("open");return;}
+  const cs=compareList;
+  const minRank=Math.min(...cs.map(u=>u.cugRank));
+  const minPts=Math.min(...cs.filter(u=>u.minPts!==null).map(u=>u.minPts||999));
+  const rows=[
+    {l:"CUG Rank",f:u=>`<strong>#${u.cugRank}</strong>`,best:"rank"},
+    {l:"University",f:u=>u.uni},
+    {l:"Course",f:u=>u.course},
+    {l:"City / Region",f:u=>`${u.city}, ${u.region}`},
+    {l:"Campus",f:u=>u.campus},
+    {l:"UCAS Points",f:u=>u.points,best:"pts"},
+    {l:"Annual Fee",f:u=>u.fee},
+    {l:"Duration",f:u=>u.duration+(u.duration==="4 years"?' <span style="color:var(--cor);font-size:.7rem">⚠️ 4yr</span>':"")},
+    {l:"Qualification",f:u=>u.qual},
+    {l:"Institution Code",f:u=>`<strong style="color:var(--purL)">${u.instCode}</strong>`},
+    {l:"Course Code",f:u=>`<strong style="color:var(--purL)">${u.courseCode}</strong>`},
+    {l:"Ofsted Outstanding",f:u=>u.ofsted?`<span style="color:var(--purL);font-weight:700">⭐ Yes</span>`:`<span style="color:var(--muted)">—</span>`},
+  ];
+  cmpBody.innerHTML=`<p style="font-size:.75rem;color:var(--tx2);margin-bottom:.85rem;line-height:1.6">Comparing ${cs.length} course${cs.length!==1?"s":""}. <span style="color:var(--green)">Green = best value</span> in that row. Tap ⚖️ on any card to add or remove.</p>
+    <div style="overflow-x:auto"><table class="cmp-tbl"><thead><tr><th>Field</th>${cs.map(u=>`<th class="uni-col">${u.uni}</th>`).join("")}</tr></thead><tbody>
+    ${rows.map(row=>`<tr><td class="cmp-row-lbl">${row.l}</td>${cs.map(u=>{
+      let cls="";
+      if(row.best==="rank"&&u.cugRank===minRank)cls=' class="cmp-best"';
+      if(row.best==="pts"&&u.minPts!==null&&u.minPts===minPts)cls=' class="cmp-best"';
+      return `<td${cls}>${row.f(u)}</td>`;
+    }).join("")}</tr>`).join("")}
+    <tr><td class="cmp-row-lbl">Remove</td>${cs.map((u,i)=>`<td><button onclick="removeCmp(${i})" style="background:var(--redbg);border:1px solid rgba(239,68,68,.3);color:var(--red);border-radius:6px;padding:3px 10px;cursor:pointer;font-size:.72rem;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700">✕ Remove</button></td>`).join("")}</tr>
+    </tbody></table></div>`;
+  cmpOv.classList.add("open");
+}
+function removeCmp(idx){compareList.splice(idx,1);updateCmpBar();openCmp();render();}
+
+let pendingNoteKey=null;
+function savePendingNote(){
+  if(!pendingNoteKey)return;
+  const ta=document.getElementById("courseNote_"+pendingNoteKey);
+  if(ta){courseNotes[pendingNoteKey]=ta.value;render();}
+  pendingNoteKey=null;
+}
+function noteChanged(k){
+  const ta=document.getElementById("courseNote_"+k);
+  if(!ta)return;
+  courseNotes[k]=ta.value;
+  const saved=document.getElementById("noteSaved_"+k);
+  if(saved){saved.style.display="block";setTimeout(()=>{saved.style.display="none";},1500);}
   render();
 }
 
 function openM(idx){
-  const u=curList[idx];
-  const d=u.detail;
-  curIdx=idx;
-  mu.textContent=u.uni;
-  mc.textContent=u.course;
-  mrn.textContent="#"+u.cugRank;
-  const k=u.instCode+u.courseCode;
-  updateSLBtn(k);
+  savePendingNote();
+  const u=curList[idx];const d=u.detail;
+  curIdx=idx;mu.textContent=u.uni;mc_el.textContent=u.course;mrn.textContent="#"+u.cugRank;
+  const k=u.instCode+u.courseCode;pendingNoteKey=k;
+  updateSLBtn(k);updateCmpBtn(k);
   const mapsUrl="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(d.mapsQ||u.uni);
   const ntu=u.duration==="4 years";
+  const req=meetsReq(u);
+  const yr1=parseFloat((d.courseFee||"").replace(/[^0-9.]/g,""))||9790;
+  const tot=ntu?`£${(yr1+10050+10050+10050).toLocaleString()} est. over 4 years`:`£${(yr1+10050+10050).toLocaleString()} est. over 3 years`;
+  const savedNote=courseNotes[k]||"";
   mb.innerHTML=`
     <div class="gy-badge">🎓 Graduate Class of ${d.gradYear}${ntu?" (4-year course)":""} · Be the teacher they remember</div>
-    <div class="ds">
-      <div class="dst">🎫 UCAS Application Codes</div>
+    ${req==="eligible"?`<div style="background:var(--greenbg);border:1px solid rgba(34,197,94,.3);border-radius:10px;padding:.6rem .9rem;font-size:.8rem;font-weight:600;color:var(--green);margin-bottom:.85rem">✓ Based on your UCAS calculator, you meet the entry requirement for this course!</div>`:""}
+    ${req==="close"?`<div style="background:var(--amberbg);border:1px solid rgba(245,158,11,.3);border-radius:10px;padding:.6rem .9rem;font-size:.8rem;font-weight:600;color:var(--amber);margin-bottom:.85rem">⚡ You're close to the entry requirement — within 16 UCAS points. It may well be worth contacting admissions directly.</div>`:""}
+    <div class="ds"><div class="dst">🎫 UCAS Application Codes</div>
       <div class="dr"><span class="di">🏛</span><span class="dl">Institution code</span><span class="dv"><strong style="color:var(--purL);font-family:'Syne',sans-serif;letter-spacing:.05em;font-size:.95rem">${u.instCode}</strong></span></div>
       <div class="dr"><span class="di">📋</span><span class="dl">Course code</span><span class="dv"><strong style="color:var(--purL);font-family:'Syne',sans-serif;letter-spacing:.05em;font-size:.95rem">${u.courseCode}</strong></span></div>
       <div class="dr"><span class="di">🔗</span><span class="dl">UCAS listing</span><span class="dv"><a class="lk" href="${u.ucasUrl}" target="_blank" rel="noopener">View on UCAS →</a></span></div>
     </div>
-    <div class="ds">
-      <div class="dst">📅 Course Details</div>
+    <div class="ds"><div class="dst">📅 Course Details</div>
       <div class="dr"><span class="di">🗓</span><span class="dl">Open days</span><span class="dv">${d.openDays&&d.openDays.length?d.openDays.join("<br>"):"Check university website for upcoming dates"}</span></div>
       <div class="dr"><span class="di">⏱</span><span class="dl">Duration</span><span class="dv">${d.duration}${ntu?' <span style="color:var(--cor);font-weight:700">⚠️ 4-year course</span>':''}</span></div>
       <div class="dr"><span class="di">📍</span><span class="dl">Campus</span><span class="dv">${u.campus}</span></div>
       <div class="dr"><span class="di">🗺</span><span class="dl">Location</span><span class="dv"><a class="lk" href="${mapsUrl}" target="_blank" rel="noopener">${d.locationFull} 🗺</a></span></div>
+      ${u.ofsted?`<div class="dr"><span class="di">⭐</span><span class="dl">Ofsted rating</span><span class="dv"><strong style="color:var(--purL)">Outstanding</strong> — the highest grade a teacher training provider can receive</span></div>`:""}
     </div>
-    <div class="ds">
-      <div class="dst">🎯 Entry &amp; Fees</div>
+    <div class="ds"><div class="dst">🎯 Entry &amp; Fees</div>
       <div class="dr"><span class="di">✏️</span><span class="dl">UCAS points</span><span class="dv">${u.points}</span></div>
       <div class="dr"><span class="di">📝</span><span class="dl">Requirements</span><span class="dv">${d.entryReqs}</span></div>
       <div class="dr"><span class="di">💷</span><span class="dl">Annual fee</span><span class="dv">${d.courseFee}</span></div>
+      <div class="dr"><span class="di">🧮</span><span class="dl">Total cost est.</span><span class="dv">${tot} <span style="font-size:.7rem;color:var(--muted)">(yr1 at ${d.courseFee}, then £10,050/yr — subject to Parliamentary approval)</span></span></div>
       <div class="dr"><span class="di">🎓</span><span class="dl">Qualification</span><span class="dv">${u.qual}</span></div>
     </div>
-    <div class="ds">
-      <div class="dst">🏠 Accommodation</div>
+    <div class="ps-box"><div class="ps-title">✍️ Personal Statement Tips</div>
+      <ul class="ps-tips">${(u.psTips||[]).map(t=>`<li class="ps-tip">${t}</li>`).join("")}</ul>
+    </div>
+    <div class="ds"><div class="dst">🏠 Accommodation</div>
       <div class="dr"><span class="di">🛏</span><span class="dl">Halls / options</span><span class="dv">${d.accommodation}</span></div>
       <div class="dr"><span class="di">🔗</span><span class="dl">Book / browse</span><span class="dv"><a class="lk" href="${d.accommodationUrl}" target="_blank" rel="noopener">View accommodation options →</a></span></div>
     </div>
-    <div class="disc">ℹ️ Institution codes, course codes and UCAS points are verified from ucas.com. All other details, including open days, entry requirements and fees, should be confirmed directly with the university before applying. Data current as of May 2025.</div>`;
+    <div class="ds"><div class="dst">📝 My Notes</div>
+      <div class="dr" style="flex-direction:column;gap:.4rem">
+        <textarea class="notes-area" id="courseNote_${k}" placeholder="Jot down your thoughts… open day dates, questions to ask, pros and cons, what you liked…" oninput="noteChanged('${k}')">${savedNote}</textarea>
+        <div id="noteSaved_${k}" class="notes-saved">✓ Saved</div>
+      </div>
+    </div>
+    <div class="disc">ℹ️ UCAS codes verified from ucas.com. Personal statement tips are editorial suggestions only. All other details including fees, open days and requirements should be confirmed directly with the university. Data current May 2025.</div>`;
   ov.classList.add("open");
   document.getElementById("modal").scrollTop=0;
 }
 
-buildFilters();
-render();
+buildFilters();render();
 </script>
+
 </body>
 </html>
