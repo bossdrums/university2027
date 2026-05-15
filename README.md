@@ -1,154 +1,209 @@
-# 🎓 Primary Education QTS Finder
+# 🎓 Matilda's Uni App — Primary Education QTS Finder
 
-A bold, mobile-first single-file web app to help prospective students explore **Primary Education with QTS** courses at UK universities for the **September 2027 intake**.
+A mobile-first, single-file web app to help Matilda find and compare UK Primary Education with QTS undergraduate courses for **September 2027 UCAS entry**.
 
-Designed with teenagers in mind — energetic, easy to use, and packed with everything needed to find the perfect teaching degree. No frameworks. No build tools. No API keys. Just open the HTML file in any browser.
+All course data is verified directly from [ucas.com](https://www.ucas.com). No frameworks, no dependencies, no external API calls — just a single HTML file you can open in any browser.
 
 ---
 
 ## ✨ Features
 
-- **Bold, energetic design** — electric purple-to-coral gradient theme, dark mode by default, vivid colour-coded tags, and smooth animations
-- **Hero banner** — inspirational strapline, graduate year hook, and at-a-glance stats (26 universities, 29 courses, £31k+ starting salary)
-- **29 courses across 26 universities** covering BA (Hons), PGCE, and Early Years routes
-- **⭐ Shortlist feature** — save favourite courses with one tap, review them in a slide-up sheet, and remove them anytime
-- **Filter by route type** — BA (Hons), PGCE, or Early Years
-- **Filter by region** — London, North West, North East, Yorkshire, Midlands, South East, South West
-- **Search** by university name, city, course type, or region — results update instantly
-- **Dark / light mode** toggle
-- **Detailed course modal** for every result, covering:
-  - Open days
-  - Duration and expected graduation year (with motivational banner)
-  - Location with a clickable Google Maps link
-  - Entry requirements and UCAS points
-  - Annual tuition fee
-  - Link to the course page
-  - UK university ranking (linked to Complete University Guide)
-  - UK course / subject ranking (linked to source)
-  - First-year accommodation options with links
-- **Works offline** — all data is baked into the file, no internet required (except for clicking external links)
-- **Staggered card entrance animations** and hover effects throughout
+### 🔍 Search & Filter
+- **Live search** across university name, course title, city, region, institution code and course code
+- **Region filter chips** — London, North West, North East, Yorkshire, Midlands, South East, South West
+- Cards sorted best-first by the **CUG Education Subject League Table** rank
+
+### 🎯 UCAS Points Calculator
+- Enter predicted or actual **A-Level** (up to 3 grades), **BTEC Extended Diploma** or **Access to HE** grades
+- Instantly calculates your estimated UCAS tariff total
+- Cards **highlight green** when you meet the entry requirement, **dim** when out of reach, and show an **amber tag** when you're within 16 points
+- Shows a count of courses you qualify for and how many are just within reach
+
+### ⚖️ Compare Mode
+- Tap the ⚖️ button on up to **3 courses** to add them to a comparison
+- Side-by-side table showing rank, points, fee, duration, UCAS codes, Ofsted rating and more
+- **Best values highlighted in green** (lowest CUG rank, lowest entry points)
+- Floating compare bar shows how many courses are currently selected
+
+### ⭐ Shortlist
+- Star any course to save it to your shortlist
+- Shortlist sorted by CUG rank (best first)
+- **Floating shortlist bar** appears as soon as a course is saved
+- **Print / PDF** button generates a clean, formatted printable summary of shortlisted courses
+
+### 📋 Course Modals
+Each course card opens a detailed modal containing:
+- UCAS institution code and course code (verified from ucas.com)
+- Direct link to the UCAS course listing
+- Open days information
+- Full entry requirements
+- Annual tuition fee and **total estimated course cost** (3 or 4 years)
+- Campus location with Google Maps link
+- Ofsted Outstanding badge where applicable
+- Accommodation details and booking link
+
+### ✍️ Personal Statement Tips
+- **4 tailored tips per course** inside each modal, specific to that university's known priorities, ethos and admissions approach
+- Covers school experience expectations, course-specific themes, campus culture and professional values
+
+### 📝 Course Notes
+- Write and save your own notes inside any course modal
+- Notes persist in memory during the session
+- A **"Has note"** tag appears on the card so you can see at a glance which courses you have annotated
+
+### 📅 UCAS Deadline Countdown
+- Live countdown showing days remaining until the **13 January 2027** equal consideration deadline (18:00 UK time)
+- Displayed prominently above the course listings
+
+### 🌙 Dark / Light Mode
+- Dark mode by default, toggle to light mode via the header button
 
 ---
 
-## 🎨 Design
+## 📊 Course Data
 
-| Element | Detail |
+| Detail | Info |
 |---|---|
-| Theme | Bold and energetic — electric purple, coral, lime, cyan |
-| Default mode | Dark |
-| Display font | [Syne](https://fonts.google.com/specimen/Syne) — chunky, bold, modern |
-| Body font | [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans) |
-| Background | Animated radial gradient mesh |
-| Cards | Gradient accent bar, colour-coded tags, glow on hover |
-| Modal | Slide-up sheet with graduation year banner |
+| Total courses | 24 |
+| Universities | 22 |
+| Data source | Verified from ucas.com |
+| Entry cycle | September 2027 |
+| Typical graduation | 2030 (3-year courses) |
+| Ranking basis | CUG Education Subject League Table |
+| UCAS equal consideration deadline | 13 January 2027, 18:00 UK time |
 
----
+### Regions covered
+London · North West · North East · Yorkshire · Midlands · South East · South West
 
-## 🏫 Universities Included
-
-### BA (Hons) with QTS
-
-| University | Location | Region | UCAS Points |
-|---|---|---|---|
-| University of Exeter | Exeter | South West | 128–136 |
-| University of Bristol | Bristol | South West | 128 |
-| Durham University | Durham | North East | 128 |
-| University of Leeds | Leeds | Yorkshire | 120–128 |
-| University of Birmingham | Birmingham | Midlands | 120 |
-| University of Manchester | Manchester | North West | 120 |
-| University of Nottingham | Nottingham | Midlands | 112–120 |
-| Newcastle University | Newcastle | North East | 112 |
-| Manchester Metropolitan University | Manchester | North West | 120 |
-| University of Reading | Reading | South East | 112 |
-| University of Winchester | Winchester | South East | 104–112 |
-| Bath Spa University | Bath | South West | 104–112 |
-| Leeds Trinity University | Leeds | Yorkshire | 96–104 |
-| University of Worcester | Worcester | Midlands | 96–112 |
-| Liverpool Hope University | Liverpool | North West | 104–112 |
-| Liverpool John Moores University | Liverpool | North West | 104–120 |
-| Edge Hill University | Ormskirk | North West | 96–120 |
-| University of Sunderland | Sunderland | North East | 104–120 |
-| York St John University | York | Yorkshire | 96–112 |
-| University of Cumbria | Carlisle | North West | 96–112 |
-| Birmingham City University | Birmingham | Midlands | 80–112 |
-| Canterbury Christ Church University | Canterbury | South East | 88–96 |
-| University of Roehampton | London | London | 88–112 |
-| University of East London | London | London | 80–96 |
-| Middlesex University | London | London | 80–96 |
-| University of Wolverhampton | Wolverhampton | Midlands | 96–112 |
-
-### PGCE with QTS
-
-| University | Location | Region |
-|---|---|---|
-| Durham University | Durham | North East |
-| University of Leeds | Leeds | Yorkshire |
-| University of Manchester | Manchester | North West |
+### Notable flags
+- **⚠️ 4-year course** — Nottingham Trent University (graduates 2031)
+- **⭐ Ofsted Outstanding** — Winchester, Roehampton (×2), Edge Hill, Worcester
+- **Grade-based entry** — University of Reading uses A-Level grades, not UCAS tariff points
 
 ---
 
 ## 🚀 Getting Started
 
-No installation required. Simply download `primary-ed-qts-finder.html` and open it in any modern browser.
+No installation required. Just download the file and open it.
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/primary-ed-qts-finder.git
+git clone https://github.com/YOUR-USERNAME/matildas-uni-app.git
 
-# Open the app
+# Open in your browser
 open primary-ed-qts-finder.html
 ```
 
-Or drag and drop the file into your browser window.
+Or simply [download the HTML file](./primary-ed-qts-finder.html) and double-click it.
+
+> Works in all modern browsers — Chrome, Firefox, Safari and Edge. No internet connection required once downloaded (fonts load from Google Fonts on first open if online).
 
 ---
 
-## 📤 Sharing
+## 🏗️ Technical Details
 
-Because it is a single self-contained file, you can share it in several ways:
+| Detail | Info |
+|---|---|
+| Stack | Vanilla HTML, CSS and JavaScript |
+| Dependencies | None |
+| File size | ~88 KB (single file) |
+| Fonts | Syne (headings) + Plus Jakarta Sans via Google Fonts |
+| Default theme | Dark mode |
+| Data storage | In-memory only (no cookies, no localStorage) |
+| Responsive | Mobile-first, works on all screen sizes |
 
-- Send the `.html` file directly via email, WhatsApp, or AirDrop
-- Host it instantly for free at [Netlify Drop](https://app.netlify.com/drop) to get a public URL
-- Upload it to any static hosting service (GitHub Pages, Vercel, Cloudflare Pages)
-
-### Hosting on GitHub Pages
-
-1. Push the file to a GitHub repository
-2. Go to **Settings > Pages**
-3. Set the source to your main branch and root folder
-4. GitHub will publish it at `https://your-username.github.io/your-repo-name/primary-ed-qts-finder.html`
-
----
-
-## ⚠️ Data & Disclaimer
-
-All course data is based on publicly available information current as of **2025**. Open day dates, entry requirements, tuition fees, and accommodation details can change.
-
-- Bath Spa University's course is newly launched (first taught September 2025) and has no ranking data yet
-- Fees reflect the current UK undergraduate fee cap. Bath Spa, Worcester, and University of East London charge £9,790 per year; all others are £9,535 per year
-
-> Always verify details directly with the university before making any application decisions.
+All course data is embedded directly in the JavaScript array `ALL[]` inside the file. No API calls are made. The app is fully self-contained.
 
 ---
 
-## 🛠 Built With
+## 📁 File Structure
 
-- Vanilla HTML, CSS, and JavaScript — no frameworks, no dependencies
-- [Syne](https://fonts.google.com/specimen/Syne) and [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans) via Google Fonts
-
----
-
-## 🗺 Roadmap / Possible Improvements
-
-- Add Welsh and Scottish university routes
-- Add School Direct and SCITT routes
-- Add bursary and scholarship information per course
-- Persist shortlist to localStorage for return visits
-- Add a comparison view for shortlisted courses side by side
+```
+matildas-uni-app/
+│
+├── primary-ed-qts-finder.html    # The entire app — one file
+└── README.md                     # This file
+```
 
 ---
 
-## 📄 Licence
+## 📋 Data Sources & Accuracy
 
-MIT — free to use, share, and modify.
+All UCAS institution codes, course codes, entry requirements and tariff points are verified directly from individual course pages on [ucas.com](https://www.ucas.com).
+
+- CUG rankings sourced from the **Complete University Guide Education Subject League Table**
+- Ofsted ratings sourced from published Ofsted inspection reports
+- Personal statement tips are editorial suggestions based on publicly available information about each institution's ethos and priorities
+- Tuition fees current as of May 2025. The standard fee for 2027/28 entry is expected to be **£9,790/yr** for most providers, rising to **£10,050/yr** in subsequent years (subject to Parliamentary approval)
+
+> ⚠️ Always confirm all details directly with the university before submitting a UCAS application. Course details, entry requirements and fees may change.
+
+---
+
+## 🛠️ Updating the Data
+
+All course data lives in the `ALL` array inside the `<script>` block. Each course object follows this structure:
+
+```javascript
+{
+  cugRank: 17,                          // CUG Education Subject rank
+  uni: "University of Winchester",      // University name
+  course: "Primary Education with QTS", // Full course title
+  campus: "Main Site",                  // Campus name
+  city: "Winchester",                   // City
+  region: "South East",                 // Region (used by filter chips)
+  instCode: "W76",                      // UCAS institution code
+  courseCode: "X120",                   // UCAS course code
+  points: "120",                        // Display string for entry points
+  minPts: 120,                          // Numeric minimum for calculator (null = grade-based)
+  duration: "3 years",                  // "3 years" or "4 years"
+  fee: "£9,790/yr",                     // Annual tuition fee display string
+  qual: "BA (Hons)",                    // Qualification awarded
+  ofsted: true,                         // Ofsted Outstanding badge
+  ucasUrl: "https://...",               // Direct link to UCAS listing
+  psTips: ["Tip 1", "Tip 2", ...],      // 4 personal statement tips
+  detail: {                             // Expanded modal content
+    gradYear: "2030",
+    duration: "3 years, graduating 2030",
+    locationFull: "Winchester, Hampshire",
+    mapsQ: "University of Winchester",
+    entryReqs: "Full entry requirements text...",
+    courseFee: "£9,790 per year",
+    openDays: ["Check winchester.ac.uk for dates"],
+    accommodation: "Description of halls...",
+    accommodationUrl: "https://..."
+  }
+}
+```
+
+To add a new course, copy an existing object, update all fields, and add it to the `ALL` array. The app will automatically sort it into the correct position by `cugRank`.
+
+---
+
+## 📌 UCAS Key Dates (2027 Entry)
+
+| Date | Event |
+|---|---|
+| 12 May 2026 | UCAS Hub opens — applications can be started |
+| 1 September 2026 | Applications can be submitted to UCAS |
+| 15 October 2026 | Deadline for Oxford, Cambridge, Medicine, Dentistry, Vet Science |
+| **13 January 2027** | **Equal consideration deadline for all other undergraduate courses** |
+| 25 February 2027 | UCAS Extra opens |
+| August 2027 | A-Level results published |
+| September 2027 | Course start date 🎓 |
+
+---
+
+## 💜 About
+
+Built with love for Matilda, who is applying to train as a primary school teacher. The goal was to create something more useful and personal than the standard UCAS search tool — something that puts everything she actually needs in one place, in a format that works beautifully on her phone.
+
+---
+
+## ⚖️ Licence
+
+This project is for personal, non-commercial use. All UCAS data remains the property of UCAS. University names and trademarks belong to their respective institutions.
+
+---
+
+*Last updated: May 2025 · Data verified from ucas.com*
